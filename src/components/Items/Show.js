@@ -10,12 +10,10 @@ class ItemsShow extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    axios({
-      url: `/api/items/${this.props.match.params.id}`,
-      method: 'GET'
-    })
-      .then(res => this.setState({ item: res.data }));
+  componentDidMount(){
+    axios.get(`/api/items/${this.props.match.params.id}`)
+      .then(res => this.setState({ item: res.data }))
+      .catch(err => this.setState({ error: err.message }));
   }
 
   handleDelete = () => {

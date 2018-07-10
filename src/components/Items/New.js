@@ -34,8 +34,8 @@ class ItemsNew extends React.Component {
       data: this.state,
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(() => this.props.history.push('/items'));
-    // .catch(err => this.setState({ errors: err.response.data.errors }));
+      .then(() => this.props.history.push('/items'))
+      .catch(err => this.setState({ errors: err.response.data.errors }));
   }
 
   render() {

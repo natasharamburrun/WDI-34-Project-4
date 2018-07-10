@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Auth from '../../lib/Auth';
 
 import ItemsForm from './Form';
 
@@ -27,10 +28,11 @@ class ItemsEdit extends React.Component {
     axios({
       url: `/api/items/${this.props.match.params.id}`,
       method: 'PUT',
-      data: this.state
-      // headers: {Authorization: `Bearer ${Auth.getToken()}`}
+      data: this.state,
+      headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(() => this.props.history.push('/cupcakes'));
+      .then(() => this.props.history.push('/cupcakes'))
+      .catch(err => this.setState({ errors: err.response.data.errors }));
   }
 
   render() {

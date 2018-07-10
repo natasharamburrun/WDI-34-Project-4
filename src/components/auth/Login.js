@@ -17,10 +17,6 @@ class AuthLogin extends React.Component {
         Auth.setToken(res.data.token);
         this.props.history.push('/items');
       });
-  // .then(res => {
-  // Auth.setToken(res.data.token);
-  // headers: {Authorization: `Bearer ${Auth.getToken()}`}
-  // .catch(err => this.setState({ errors: err.response.data.errors }));
   }
 
   handleChange = ({target: { name, value }}) => {
