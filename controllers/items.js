@@ -17,8 +17,17 @@ function createRoute(req, res, next) {
     .catch(next);
 }
 
+function updateRoute(req, res, next) {
+  Item.findById(req.params.id)
+    .then(item => item.set(req.body))
+    .then(item => item.save())
+    .then(item => res.json(item))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
-  create: createRoute
+  create: createRoute,
+  update: updateRoute
 };
