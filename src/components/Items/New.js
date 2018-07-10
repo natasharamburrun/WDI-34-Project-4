@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-
 import ItemsForm from './Form';
+import Auth from '../../lib/Auth';
 
 class ItemsNew extends React.Component {
 
@@ -31,8 +31,8 @@ class ItemsNew extends React.Component {
     axios({
       url: '/api/items',
       method: 'POST',
-      data: this.state
-      // headers: {Authorization: `Bearer ${Auth.getToken()}`}
+      data: this.state,
+      headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
       .then(() => this.props.history.push('/items'));
     // .catch(err => this.setState({ errors: err.response.data.errors }));

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import Auth from '../../lib/Auth';
 
 class ItemsShow extends React.Component {
 
@@ -20,8 +21,8 @@ class ItemsShow extends React.Component {
   handleDelete = () => {
     axios({
       url: `/api/items/${this. props.match.params.id}`,
-      method: 'DELETE'
-      // headers: {Authorization: `Bearer ${Auth.getToken()}`}
+      method: 'DELETE',
+      headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
       .then(() => this.props.history.push('/criminals'));
   };
