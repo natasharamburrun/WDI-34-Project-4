@@ -5,7 +5,7 @@ import Home from './components/pages/Home';
 import About from './components/pages/About';
 import ItemsIndex from './components/Items/Index';
 import ItemsShow from './components/Items/Show';
-import Navbar from './components/common/Navbar';
+import Header from './components/common/Header';
 
 import 'bulma';
 import './scss/style.scss';
@@ -15,7 +15,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <main>
-          <Navbar />
+          <Header />
           <Route exact path="/" component={Home}/>
           <section className="section">
             <div className="container">
