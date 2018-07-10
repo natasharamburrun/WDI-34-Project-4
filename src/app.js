@@ -6,6 +6,7 @@ import About from './components/pages/About';
 import ItemsIndex from './components/Items/Index';
 import ItemsShow from './components/Items/Show';
 import ItemsNew from './components/Items/New';
+import ItemsEdit from './components/Items/Edit';
 import Header from './components/common/Header';
 
 import 'bulma';
@@ -22,6 +23,7 @@ class App extends React.Component {
             <div className="container">
               <Switch>
                 <Route path="/items/new" component={ItemsNew} />
+                <Route path="/items/:id/edit" component={ItemsEdit} />
                 <Route path="/items/:id" component={ItemsShow} />
                 <Route path="/items" component={ItemsIndex} />
                 <Route exact path="/about" component={About}/>

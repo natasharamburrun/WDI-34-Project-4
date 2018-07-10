@@ -37,7 +37,7 @@ class ItemsShow extends React.Component {
           </figure>
         </div>
         <div className="column is-half">
-          <h2 className="title">{this.state.item.name}</h2>
+          <h2 className="title">{this.state.item.designerName}</h2>
           <hr />
 
           <Link className="button" to={`/items/${this.state.item._id}/edit`}>Edit</Link>
