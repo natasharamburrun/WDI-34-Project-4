@@ -5,7 +5,20 @@ function indexRoute(req, res, next) {
     .then(items => res.json(items))
     .catch(next);
 }
+function showRoute(req, res, next) {
+  Item.findById(req.params.id)
+    .then(item => res.json(item))
+    .catch(next);
+}
+
+function createRoute(req, res, next) {
+  Item.create(req.body)
+    .then(item => res.status(201).json(item))
+    .catch(next);
+}
 
 module.exports = {
-  index: indexRoute
+  index: indexRoute,
+  show: showRoute,
+  create: createRoute
 };
