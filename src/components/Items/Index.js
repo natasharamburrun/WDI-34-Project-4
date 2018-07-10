@@ -35,7 +35,13 @@ class ItemsIndex extends React.Component {
 
                     <div className="card-content">
                       <div className="content">
-                        <h2 className="title">{item.name}</h2>
+                        <h2 className="title">{item.designerName}</h2>
+                        <h2 className="title">{item.itemDescription}</h2>
+                      </div>
+                      <div className="card-content">
+                        <h2 className="title">Size: {item.size}</h2>
+                        <h2 className="title">Price: {item.price}</h2>
+                        <h2 className="title">RRP: {item.rrp}</h2>
                       </div>
                     </div>
                   </div>

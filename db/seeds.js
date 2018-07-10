@@ -11,7 +11,7 @@ mongoose.connect(dbURI, (err, db) => {
     .then(() => Item.create([{
       itemCategory: 'Dress',
       itemDescription: 'Balenciaga graphic print dress',
-      designerName: 'Balenciaga',
+      designerName: 'BALENCIAGA',
       size: 's',
       price: '£195',
       rrp: '£680',
