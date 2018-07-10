@@ -5,7 +5,9 @@ import Auth from '../../lib/Auth';
 
 class ItemsNew extends React.Component {
 
-  state = {}
+  state = {
+    errors: {}
+  };
 
   componentDidMount() {
     axios({

@@ -12,7 +12,7 @@ import AuthRegister from './components/auth/register';
 import Header from './components/common/Header';
 import FlashMessages from './components/common/FlashMessages';
 import ProtectedRoute from './components/common/ProtectedRoute';
-
+import NotFound from './components/pages/NotFound';
 
 import 'bulma';
 import './scss/style.scss';
@@ -24,7 +24,6 @@ class App extends React.Component {
         <main>
           <Header />
           <FlashMessages />
-          <Route exact path="/" component={Home}/>
           <section className="section">
             <div className="container">
               <Switch>
@@ -35,6 +34,8 @@ class App extends React.Component {
                 <Route path="/login" component={AuthLogin} />
                 <Route path="/register" component={AuthRegister} />
                 <Route exact path="/about" component={About}/>
+                <Route exact path="/" component={Home}/>
+                <Route component={NotFound} />
               </Switch>
             </div>
           </section>

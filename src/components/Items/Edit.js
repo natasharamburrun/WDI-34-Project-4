@@ -6,7 +6,9 @@ import ItemsForm from './Form';
 
 class ItemsEdit extends React.Component {
 
-  state = {}
+  state = {
+    errors: {}
+  };
 
   handleChange = ({ target: { name, value }}) => {
     this.setState({ [name]: value });
