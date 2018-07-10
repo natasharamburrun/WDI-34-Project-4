@@ -38,12 +38,12 @@ class Header extends React.Component {
             <div className={`navbar-menu${this.state.navbarOpen ? ' is-active' : ''}`}>
               <div className="navbar-start">
                 <Link to="/items"  className="navbar-item">All Items</Link>
-                <Link to="/items/new" className="navbar-item">New Item</Link>
+                {Auth.isAuthenticated() && <Link to="/items/new" className="navbar-item">New Item</Link>}
               </div>
               <div className="navbar-end">
-                <Link to="/login" className="navbar-item">Login</Link>
-                <a onClick={this.logout} className="navbar-item">Logout</a>
-                <Link to="/register" className="navbar-item">Register</Link>
+                {!Auth.isAuthenticated() && <Link to="/login" className="navbar-item">Login</Link>}
+                {Auth.isAuthenticated() && <a onClick={this.logout} className="navbar-item">Logout</a>}
+                {!Auth.isAuthenticated() && <Link to="/register" className="navbar-item">Register</Link>}
               </div>
             </div>
           </nav>

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-// import Auth from '../../lib/Auth';
+import Auth from '../../lib/Auth';
 // import Flash from '../../lib/Flash';
 
 class AuthLogin extends React.Component {
@@ -13,13 +13,15 @@ class AuthLogin extends React.Component {
       method: 'POST',
       data: this.state
     })
-      .then(() => this.props.history.push('/items'));
-  }
+      .then(res => {
+        Auth.setToken(res.data.token);
+        this.props.history.push('/items');
+      });
   // .then(res => {
   // Auth.setToken(res.data.token);
   // headers: {Authorization: `Bearer ${Auth.getToken()}`}
   // .catch(err => this.setState({ errors: err.response.data.errors }));
-
+  }
 
   handleChange = ({target: { name, value }}) => {
     this.setState({ [name]: value });
