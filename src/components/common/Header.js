@@ -37,7 +37,7 @@ class Header extends React.Component {
 
             <div className={`navbar-menu${this.state.navbarOpen ? ' is-active' : ''}`}>
               <div className="navbar-start">
-                <Link to="/items"  className="navbar-item">All Items</Link>
+
                 {Auth.isAuthenticated() && <Link to="/items/new" className="navbar-item">New Item</Link>}
               </div>
               <div className="navbar-end">
@@ -53,11 +53,8 @@ class Header extends React.Component {
         <div className="hero-body">
           <div className="container has-text-centered">
             <h1 className="title">
-              Title
+              Designer MarketPlace
             </h1>
-            <h2 className="subtitle">
-              Subtitle
-            </h2>
           </div>
         </div>
 
@@ -66,12 +63,11 @@ class Header extends React.Component {
           <nav className="tabs">
             <div className="container">
               <ul>
-                <li className="is-active"><a>Overview</a></li>
-                <li><a>Modifiers</a></li>
-                <li><a>Grid</a></li>
-                <li><a>Elements</a></li>
-                <li><a>Components</a></li>
-                <li><a>Layout</a></li>
+                <li><Link to="/items" className="is-active">Clothes</Link></li>
+                <li><a>Bags</a></li>
+                <li><a>Shoes</a></li>
+                <li><a>Accessories</a></li>
+                <li><a>Blogs</a></li>
               </ul>
             </div>
           </nav>
