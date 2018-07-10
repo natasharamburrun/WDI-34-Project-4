@@ -7,7 +7,10 @@ import ItemsIndex from './components/Items/Index';
 import ItemsShow from './components/Items/Show';
 import ItemsNew from './components/Items/New';
 import ItemsEdit from './components/Items/Edit';
+import AuthLogin from './components/auth/login';
+import AuthRegister from './components/auth/register';
 import Header from './components/common/Header';
+
 
 import 'bulma';
 import './scss/style.scss';
@@ -26,6 +29,8 @@ class App extends React.Component {
                 <Route path="/items/:id/edit" component={ItemsEdit} />
                 <Route path="/items/:id" component={ItemsShow} />
                 <Route path="/items" component={ItemsIndex} />
+                <Route path="/login" component={AuthLogin} />
+                <Route path="/register" component={AuthRegister} />
                 <Route exact path="/about" component={About}/>
               </Switch>
             </div>

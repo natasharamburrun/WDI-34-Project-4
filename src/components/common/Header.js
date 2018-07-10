@@ -1,10 +1,17 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import Auth from '../../lib/Auth';
 
 class Header extends React.Component {
   state = {
     navbarOpen: false
   }
+
+  logout = () => {
+    Auth.logout();
+    this.props.history.push('/');
+  }
+
   render() {
     return (
       <section className="hero is-small">
@@ -32,6 +39,11 @@ class Header extends React.Component {
               <div className="navbar-start">
                 <Link to="/items"  className="navbar-item">All Items</Link>
                 <Link to="/items/new" className="navbar-item">New Item</Link>
+              </div>
+              <div className="navbar-end">
+                <Link to="/login" className="navbar-item">Login</Link>
+                <a onClick={this.logout} className="navbar-item">Logout</a>
+                <Link to="/register" className="navbar-item">Register</Link>
               </div>
             </div>
           </nav>
