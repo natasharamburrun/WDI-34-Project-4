@@ -6,6 +6,7 @@ const itemSchema = new mongoose.Schema({
   size: {type: String, required: 'This field is required'},
   price: {type: String, required: 'This field is required'},
   rrp: [ String ],
+  material: [ String ],
   condition: {type: String, required: 'This field is required'},
   colour: [ String ],
   image: {type: String, required: 'This field is required'}
