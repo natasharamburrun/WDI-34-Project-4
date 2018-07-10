@@ -17,6 +17,15 @@ class ItemsShow extends React.Component {
       .then(res => this.setState({ item: res.data }));
   }
 
+  handleDelete = () => {
+    axios({
+      url: `/api/items/${this. props.match.params.id}`,
+      method: 'DELETE'
+      // headers: {Authorization: `Bearer ${Auth.getToken()}`}
+    })
+      .then(() => this.props.history.push('/criminals'));
+  };
+
   render() {
     // if(this.state.error) return <h2 className="title is-2">{this.state.error}</h2>;
     if(!this.state.item) return <h2 className="title is-2">Loading...</h2>;
