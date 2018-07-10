@@ -22,7 +22,7 @@ class ItemsShow extends React.Component {
       method: 'DELETE',
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(() => this.props.history.push('/criminals'));
+      .then(() => this.props.history.push('/items'));
   };
 
   render() {

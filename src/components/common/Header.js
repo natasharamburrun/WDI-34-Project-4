@@ -37,10 +37,11 @@ class Header extends React.Component {
 
             <div className={`navbar-menu${this.state.navbarOpen ? ' is-active' : ''}`}>
               <div className="navbar-start">
-
+                <Link to="/items/about" className="navbar-item">About</Link>
                 {Auth.isAuthenticated() && <Link to="/items/new" className="navbar-item">New Item</Link>}
               </div>
               <div className="navbar-end">
+                {!Auth.isAuthenticated() && <Link to="/account" className="navbar-item">Account</Link>}
                 {!Auth.isAuthenticated() && <Link to="/login" className="navbar-item">Login</Link>}
                 {Auth.isAuthenticated() && <a onClick={this.logout} className="navbar-item">Logout</a>}
                 {!Auth.isAuthenticated() && <Link to="/register" className="navbar-item">Register</Link>}
@@ -60,7 +61,7 @@ class Header extends React.Component {
 
         {/* Hero footer: will stick at the bottom */}
         <div className="hero-foot">
-          <nav className="tabs">
+          <nav className="tabs is-boxed is-fullwidth">
             <div className="container">
               <ul>
                 <li><Link to="/items" className="is-active">Clothes</Link></li>
