@@ -25,9 +25,17 @@ function updateRoute(req, res, next) {
     .catch(next);
 }
 
+function deleteRoute(req, res, next) {
+  Item.findById(req.params.id)
+    .then(item => item.remove())
+    .then(() => res.sendStatus(204))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
   create: createRoute,
-  update: updateRoute
+  update: updateRoute,
+  delete: deleteRoute
 };
