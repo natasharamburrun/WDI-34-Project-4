@@ -31,7 +31,7 @@ class ItemsEdit extends React.Component {
       data: this.state,
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(() => this.props.history.push('/cupcakes'))
+      .then(() => this.props.history.push('/items'))
       .catch(err => this.setState({ errors: err.response.data.errors }));
   }
 

@@ -10,6 +10,8 @@ import ItemsEdit from './components/Items/Edit';
 import AuthLogin from './components/auth/login';
 import AuthRegister from './components/auth/register';
 import Header from './components/common/Header';
+import FlashMessages from './components/common/FlashMessages';
+import ProtectedRoute from './components/common/ProtectedRoute';
 
 
 import 'bulma';
@@ -21,12 +23,13 @@ class App extends React.Component {
       <BrowserRouter>
         <main>
           <Header />
+          <FlashMessages />
           <Route exact path="/" component={Home}/>
           <section className="section">
             <div className="container">
               <Switch>
-                <Route path="/items/new" component={ItemsNew} />
-                <Route path="/items/:id/edit" component={ItemsEdit} />
+                <ProtectedRoute path="/items/new" component={ItemsNew} />
+                <ProtectedRoute path="/items/:id/edit" component={ItemsEdit} />
                 <Route path="/items/:id" component={ItemsShow} />
                 <Route path="/items" component={ItemsIndex} />
                 <Route path="/login" component={AuthLogin} />

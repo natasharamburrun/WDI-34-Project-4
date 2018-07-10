@@ -26,7 +26,7 @@ class ItemsShow extends React.Component {
   };
 
   render() {
-    // if(this.state.error) return <h2 className="title is-2">{this.state.error}</h2>;
+    if(this.state.error) return <h2 className="title is-2">{this.state.error}</h2>;
     if(!this.state.item) return <h2 className="title is-2">Loading...</h2>;
     return (
       <div className="columns">
