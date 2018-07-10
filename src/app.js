@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import Home from './components/pages/Home';
-// import About from './components/pages/About';
+import Home from './components/pages/Home';
+import About from './components/pages/About';
 import ItemsIndex from './components/Items/Index';
+import ItemsShow from './components/Items/Show';
 import Navbar from './components/common/Navbar';
 
 import 'bulma';
@@ -15,12 +16,13 @@ class App extends React.Component {
       <BrowserRouter>
         <main>
           <Navbar />
-          {/* <Route exact path="/" component={Home}/> */}
+          <Route exact path="/" component={Home}/>
           <section className="section">
             <div className="container">
               <Switch>
+                <Route path="/items/:id" component={ItemsShow} />
                 <Route path="/items" component={ItemsIndex} />
-                {/* <Route exact path="/" component={About}/> */}
+                <Route exact path="/about" component={About}/>
               </Switch>
             </div>
           </section>
