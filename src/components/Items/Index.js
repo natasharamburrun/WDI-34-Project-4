@@ -47,20 +47,22 @@ class ItemsIndex extends React.Component {
 
   render(){
     return(
-      <section className="section">
-        {/* searchbar */}
-        <div className="filters">
-          <input className="input" placeholder="search" onChange={this.handleSearch} />
-        </div>
-        <div className="control">
-          <div className="select">
-            <select onChange={this.handleSort}>
-              <option value="name | asc">Name (A-Z)</option>
-              <option value="name | desc">Name (Z-A)</option>
-            </select>
+      <section className="section-fullpage">
+        <div className="container-search">
+          {/* searchbar */}
+          <div className="filters">
+            <input className="input" placeholder="search" onChange={this.handleSearch} />
+          </div>
+          <div className="control">
+            <div className="select">
+              <select onChange={this.handleSort}>
+                <option value="name | asc">Name (A-Z)</option>
+                <option value="name | desc">Name (Z-A)</option>
+              </select>
+            </div>
           </div>
         </div>
-        <div className="container">
+        <div className="container-content">
           <div className="columns is-multiline">
             {this.sortedAndFilteredItems().map(item =>
               <div key={item._id} className="column is-one-third-desktop is-half-tablet">

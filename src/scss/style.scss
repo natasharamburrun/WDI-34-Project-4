@@ -3,24 +3,15 @@
 
 @import 'components/header';
 @import 'components/show';
+@import 'components/itemIndex';
+
 // @import 'components/home';
 // @import 'components/about';
 // @import 'components/login';
 // @import 'components/profile';
 // @import 'components/profileEdit';
-// @import 'components/itemIndex';
 // @import 'components/itemShow';
 // @import 'components/itemEdit';
 // @import 'components/footer';
 
 // @import 'partials/flashMessage';
-
-
-//index page card content - info on clothes styling
-.card-content {
-  text-align: center;
-  height: 230px;
-}
-.card-content h2 {
-  font-size: 15px;
-}

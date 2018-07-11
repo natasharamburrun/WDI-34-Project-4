@@ -13,7 +13,7 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <section className="hero is-small">
+      <section className="hero is-medium">
         {/* Hero Navbar head*/}
         <div className="hero-head">
           <nav className="navbar" role="navigation" aria-label="main navigation">
@@ -40,7 +40,7 @@ class Header extends React.Component {
                 {Auth.isAuthenticated() && <Link to="/items/new" className="navbar-item">New Item</Link>}
               </div>
               <div className="navbar-end">
-                <Link to="profile/id:" className="navbar-item">Profile</Link>
+                <Link to="profile{ id: currentUser._id }" className="navbar-item">Profile</Link>
                 {!Auth.isAuthenticated() && <Link to="/account" className="navbar-item">Account</Link>}
                 {!Auth.isAuthenticated() && <Link to="/login" className="navbar-item">Login</Link>}
                 {Auth.isAuthenticated() && <a onClick={this.logout} className="navbar-item">Logout</a>}
