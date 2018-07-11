@@ -15,6 +15,7 @@ import FlashMessages from './components/common/FlashMessages';
 import ProtectedRoute from './components/common/ProtectedRoute';
 import NotFound from './components/pages/NotFound';
 
+
 import 'bulma';
 import './scss/style.scss';
 
@@ -41,6 +42,7 @@ class App extends React.Component {
               </Switch>
             </div>
           </section>
+
         </main>
       </BrowserRouter>
     );

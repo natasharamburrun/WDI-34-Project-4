@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const items = require('../controllers/items');
 const auth = require('../controllers/auth');
+const payment = require('../controllers/payment');
 const secureRoute = require('../lib/secureRoute');
 
 router.route('/items')
@@ -14,5 +15,8 @@ router.route('/items/:id/')
 
 router.post('/register', auth.register);
 router.post('/login', auth.login);
+
+router.post('/charge', payment.create);
+
 
 module.exports = router;

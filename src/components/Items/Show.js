@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-
+import {Elements, StripeProvider} from 'react-stripe-elements';
+import CheckoutForm from '../payment/CheckoutForm';
 import Auth from '../../lib/Auth';
 
 class ItemsShow extends React.Component {
@@ -72,6 +73,16 @@ class ItemsShow extends React.Component {
               <hr />
               <Link className="button" to={`/items/${this.state.item._id}/edit`}>Edit</Link>
               <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+              <hr />
+
+              <StripeProvider apiKey="pk_test_PjW7wZQs7SGqM4qnWg47WytW">
+                <div className="example">
+                  <h1>React Stripe Elements Example</h1>
+                  <Elements>
+                    <CheckoutForm />
+                  </Elements>
+                </div>
+              </StripeProvider>
             </div>
           </div>
         </div>
