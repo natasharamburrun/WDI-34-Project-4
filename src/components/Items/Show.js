@@ -77,7 +77,6 @@ class ItemsShow extends React.Component {
 
               <StripeProvider apiKey="pk_test_PjW7wZQs7SGqM4qnWg47WytW">
                 <div className="example">
-                  <h1>React Stripe Elements Example</h1>
                   <Elements>
                     <CheckoutForm />
                   </Elements>

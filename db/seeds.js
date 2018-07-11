@@ -56,4 +56,5 @@ mongoose.connect(dbURI, (err, db) => {
     .then(items => console.log(`${items.length} items created`))
     .catch(err => console.log(err))
     .finally(() => mongoose.connection.close());
+
 });

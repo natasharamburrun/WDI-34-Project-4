@@ -24,17 +24,17 @@ class CheckoutForm extends React.Component {
         axios({
           url: '/api/charge',
           method: 'POST',
-          data: token.id,
-          headers: { 'Content-Type': 'text/plain' }
+          body: token.id,
+          data:
+          {
+            source: token.id,
+            amount: this.state
+          }
+          // headers: { 'Content-Type': 'text/plain' }
         })
           .then(res => console.log(res.data));
       });
   }
-  //         data: {
-  //           // amount
-  //           // token
-  //
-  //         }
 
   render() {
     if (this.state.complete) return <h1>Purchase Complete</h1>;

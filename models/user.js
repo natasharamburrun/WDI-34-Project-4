@@ -1,10 +1,14 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const uniqueValidator = require('mongoose-unique-validator');
 
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  admin: {type: Boolean},
+  image: { type: String, default: 'https://i.pinimg.com/736x/b8/ba/41/b8ba41e527bcc05c9dde6bed6422d58f--imvu-art-pics.jpg'},
+  bio: { type: String, default: 'Change your bio!' }
 }, {
   id: false
   //this dont make an ID virtual
@@ -17,6 +21,7 @@ userSchema.set('toJSON', {
     return json;
   }
 });
+userSchema.plugin(uniqueValidator);
 
 userSchema.virtual('passwordConfirmation')
   .set(function setPasswordConfirmation(passwordConfirmation) {

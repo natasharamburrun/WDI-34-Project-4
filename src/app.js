@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Account from './components/pages/Account';
+import UsersShow from './components/Users/Show';
 import ItemsIndex from './components/Items/Index';
 import ItemsShow from './components/Items/Show';
 import ItemsNew from './components/Items/New';
@@ -31,6 +32,7 @@ class App extends React.Component {
               <Switch>
                 <ProtectedRoute path="/items/new" component={ItemsNew} />
                 <ProtectedRoute path="/items/:id/edit" component={ItemsEdit} />
+                <Route path="/profile/:id" component={UsersShow}/>
                 <Route path="/items/:id" component={ItemsShow} />
                 <Route path="/items" component={ItemsIndex} />
                 <Route path="/login" component={AuthLogin} />
