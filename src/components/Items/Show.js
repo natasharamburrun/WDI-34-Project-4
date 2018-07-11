@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+
 import Auth from '../../lib/Auth';
 
 class ItemsShow extends React.Component {
@@ -36,9 +37,10 @@ class ItemsShow extends React.Component {
           </figure>
         </div>
         <div className="column is-half">
-          <h2 className="title">{this.state.item.designerName}</h2>
-          <hr />
 
+          <h2 className="title">{this.state.item.designerName}</h2>
+          <h2 className="title">{this.state.item.price}</h2>
+          <hr />
           <Link className="button" to={`/items/${this.state.item._id}/edit`}>Edit</Link>
           <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
         </div>

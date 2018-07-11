@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
+import Account from './components/pages/Account';
 import ItemsIndex from './components/Items/Index';
 import ItemsShow from './components/Items/Show';
 import ItemsNew from './components/Items/New';
@@ -34,6 +35,7 @@ class App extends React.Component {
                 <Route path="/login" component={AuthLogin} />
                 <Route path="/register" component={AuthRegister} />
                 <Route exact path="/about" component={About}/>
+                <Route exact path="/account" component={Account}/>
                 <Route exact path="/" component={Home}/>
                 <Route component={NotFound} />
               </Switch>

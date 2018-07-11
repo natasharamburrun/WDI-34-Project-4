@@ -1,13 +1,16 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import _ from 'lodash';
+
 
 class ItemsIndex extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      items: []
+      items: [],
+      sort: 'name|asc'
     };
   }
 
@@ -16,12 +19,50 @@ class ItemsIndex extends React.Component {
       .then(res => this.setState({ items: res.data }));
   }
 
+  handleSearch = (e) => {
+    this.setState({ search: e.target.value });
+  }
+
+  filteredItems = (items) => {
+    const re = new RegExp(this.state.search, 'i');
+    return items.filter(item => {
+      return re.test(item.designerName);
+    });
+
+  }
+
+  handleSort = (e) => {
+    this.setState({ sort: e.target.value });
+  }
+
+  sortedItems = (items) => {
+    const [ prop, dir ] = this.state.sort.split('|');
+    return _.orderBy(items, prop, dir);
+  }
+
+  sortedAndFilteredItems = () => {
+    const filtered = this.filteredItems(this.state.items);
+    return this.sortedItems(filtered);
+  }
+
   render(){
     return(
       <section className="section">
+        {/* searchbar */}
+        <div className="filters">
+          <input className="input" placeholder="search" onChange={this.handleSearch} />
+        </div>
+        <div className="control">
+          <div className="select">
+            <select onChange={this.handleSort}>
+              <option value="name | asc">Name (A-Z)</option>
+              <option value="name | desc">Name (Z-A)</option>
+            </select>
+          </div>
+        </div>
         <div className="container">
           <div className="columns is-multiline">
-            {this.state.items.map(item =>
+            {this.sortedAndFilteredItems().map(item =>
               <div key={item._id} className="column is-one-third-desktop is-half-tablet">
 
                 <Link to={`/items/${item._id}`}>

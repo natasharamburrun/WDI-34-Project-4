@@ -11,7 +11,6 @@ class Header extends React.Component {
     Auth.logout();
     this.props.history.push('/');
   }
-
   render() {
     return (
       <section className="hero is-small">
@@ -37,7 +36,7 @@ class Header extends React.Component {
 
             <div className={`navbar-menu${this.state.navbarOpen ? ' is-active' : ''}`}>
               <div className="navbar-start">
-                <Link to="/items/about" className="navbar-item">About</Link>
+                <Link to="/about" className="navbar-item">About</Link>
                 {Auth.isAuthenticated() && <Link to="/items/new" className="navbar-item">New Item</Link>}
               </div>
               <div className="navbar-end">
@@ -49,6 +48,7 @@ class Header extends React.Component {
             </div>
           </nav>
         </div>
+
 
         {/* Hero content: will be in the middle  */}
         <div className="hero-body">
