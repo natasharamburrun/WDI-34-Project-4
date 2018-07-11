@@ -37,13 +37,42 @@ class ItemsShow extends React.Component {
           </figure>
         </div>
         <div className="column is-half">
-
-          <h2 className="title">{this.state.item.designerName}</h2>
-          <h2 className="title">{this.state.item.price}</h2>
-          <hr />
-          <Link className="button" to={`/items/${this.state.item._id}/edit`}>Edit</Link>
-          <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+          <div className="content-top">
+            <h2 className="title">{this.state.item.designerName}</h2>
+            <h4 className="title">{this.state.item.itemDescription}</h4>
+            <h2 className="title">{this.state.item.price}</h2>
+          </div>
+          <div className="card">
+            <div className="content-mid">
+              <a className="button is-black">Buy Now</a>
+              {/* <a className="button is-dark">Bid</a> */}
+              <ion-icon is-large name="star">Add to wishlist</ion-icon>
+            </div>
+          </div>
+          <div className="card">
+            <div className="content-bottom">
+              <h3 className="title is-3">Product description</h3>
+              <h4 className="title">Item: {this.state.item.itemCategory}</h4>
+              <h4 className="title">Size: {this.state.item.size}</h4>
+              <h4 className="title">rrp: {this.state.item.rrp}</h4>
+              <h4 className="title">Condition: {this.state.item.condition}</h4>
+              <h4 className="title">Material: {this.state.item.material}</h4>
+              <h4 className="title">Colour: {this.state.item.colour}</h4>
+            </div>
+            <div className="content-payment">
+              <h3 className="title is-3">Payment</h3>
+            </div>
+            <div className="content-payment">
+              <h3 className="title is-3">Delivery</h3>
+            </div>
+            <div className="content">
+              <hr />
+              <Link className="button" to={`/items/${this.state.item._id}/edit`}>Edit</Link>
+              <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+            </div>
+          </div>
         </div>
+
       </div>
     );
   }
