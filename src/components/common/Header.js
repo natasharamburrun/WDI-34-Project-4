@@ -42,7 +42,8 @@ class Header extends React.Component {
 
               <div className="navbar-end">
                 {Auth.isAuthenticated() && <Link to={`/users/${Auth.getPayload().sub}`}className="navbar-item">Profile</Link>}
-                {Auth.isAuthenticated() && <Link to={`/account/${Auth.getPayload().sub}`} className="navbar-item">Account</Link>}
+                {Auth.isAuthenticated() && <Link to={`/users/${Auth.getPayload().sub}/edit`} className="navbar-item">Account</Link>}
+
                 {!Auth.isAuthenticated() && <Link to="/login" className="navbar-item">Login</Link>}
                 {Auth.isAuthenticated() && <a onClick={this.logout} className="navbar-item">Logout</a>}
                 {!Auth.isAuthenticated() && <Link to="/register" className="navbar-item">Register</Link>}

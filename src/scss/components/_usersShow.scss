@@ -16,8 +16,9 @@
   padding: 10px;
 }
 
-.media-content img {
-  border-radius: 50%;
+.media-content-image img  {
+  max-height: 150px;
+  max-width: 150px;
 }
 
 .section {

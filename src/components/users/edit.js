@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Auth from '../../lib/Auth';
 
+
 import UsersForm from './form';
 
 class UsersEdit extends React.Component {
@@ -36,6 +37,10 @@ class UsersEdit extends React.Component {
     })
       .then(() => this.props.history.push(`/users/${this.props.match.params.id}`))
       .catch(err => this.setState({ errors: err.response.data.errors }));
+  }
+
+  handleFilestack = (res) => {
+    this.setState({ filesUploaded: res.filesUploaded[0].url });
   }
 
 

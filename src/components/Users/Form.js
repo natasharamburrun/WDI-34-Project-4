@@ -17,8 +17,8 @@ const UsersForm = ({ handleChange, handleSubmit, data }) => {
 
       <div className="field">
         <label className="label">Bio</label>
-        <textarea className="textarea" name="image" placeholder="Image" onChange={handleChange} value={data.image || ''}/>
-        {data.errors.image &&<small>{data.errors.image}</small>}
+        <textarea className="textarea" name="bio" placeholder="Bio" onChange={handleChange} value={data.bio || ''}/>
+        {data.errors.bio &&<small>{data.errors.bio}</small>}
       </div>
 
       <div className="update-button">
