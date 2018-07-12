@@ -1,0 +1,32 @@
+
+
+.section {
+background-color: #EDEFF0;
+}
+//searchbar
+.container-search {
+  padding-bottom: 30px;
+  max-width: 400px;
+  display: inline-flex;
+}
+
+//
+.container-content {
+  // border: grey ridge 1px;
+  padding: 50px;
+  background-color: #f4f4f4;
+}
+
+.card-image {
+  margin: 5px;
+}
+
+
+//index page card content - info on clothes styling
+.card-content {
+  text-align: center;
+  height: 230px;
+}
+.card-content h2 {
+  font-size: 15px;
+}
