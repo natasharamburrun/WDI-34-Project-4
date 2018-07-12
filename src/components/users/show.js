@@ -14,20 +14,20 @@ class UsersShow extends React.Component {
 
   componentDidMount() {
     axios({
-      url: `/api/user/${this.props.match.params.id}`,
+      url: `/api/users/${this.props.match.params.id}`,
       method: 'GET'
     })
-      .then(res => this.setState({ user: res.data }))
+      .then(res => this.setState({ users: res.data }))
       .catch(err => this.setState({ error: err.message }));
   }
 
   handleDelete = () => {
     axios({
-      url: `/api/user/${this.props.match.params.id}`,
+      url: `/api/users/${this.props.match.params.id}`,
       method: 'DELETE',
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(() => this.props.history.push('/user'));
+      .then(() => this.props.history.push('/users'));
   }
 
 
@@ -36,7 +36,7 @@ class UsersShow extends React.Component {
     // if(!this.state.user) return <h2 className="title is-2">Loading...</h2>;
     return (
       <section className="user-show">
-        <h1>what is going on?</h1>
+        <h1>what is going on!!!</h1>
         {/* <section className="hero is-primary">
           <div className="hero-body">
             <figure className="media-content-image">

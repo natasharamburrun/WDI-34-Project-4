@@ -32,7 +32,7 @@ class App extends React.Component {
               <Switch>
                 <ProtectedRoute path="/items/new" component={ItemsNew} />
                 <ProtectedRoute path="/items/:id/edit" component={ItemsEdit} />
-                <Route path="/user/:id" component={UsersShow}/>
+                <Route path="/users/:id" component={UsersShow}/>
                 <Route path="/items/:id" component={ItemsShow} />
                 <Route path="/items" component={ItemsIndex} />
                 <Route path="/login" component={AuthLogin} />
