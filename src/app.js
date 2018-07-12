@@ -15,7 +15,7 @@ import Header from './components/common/Header';
 import FlashMessages from './components/common/FlashMessages';
 import ProtectedRoute from './components/common/ProtectedRoute';
 import NotFound from './components/pages/NotFound';
-
+import ReactFilestack from 'filestack-react';
 
 import 'bulma';
 import './scss/style.scss';
@@ -27,6 +27,12 @@ class App extends React.Component {
         <main>
           <Header />
           <FlashMessages />
+          {/* <ReactFilestack
+            apikey={'AbEqJmhCVTTmU0EfzPrSoz'}
+            mode="upload"
+            options={options}
+            onSuccess={onSuccess}
+          /> */}
           <section className="section">
             <div className="container">
               <Switch>

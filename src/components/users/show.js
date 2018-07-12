@@ -35,30 +35,24 @@ class UsersShow extends React.Component {
     if(!this.state.user) return <h2 className="title is-2">Loading...</h2>;
     return (
       <section className="user-show">
-        <section className="hero">
-          <div className="hero-body">
-            <figure className="media-content-image">
-              <p className="image is-128x128">
-                <img src="{this.state.users.image}" />
-              </p>
-            </figure>
-            <article className="media">
-              <div className="media-content">
-                <div className="content">
-
-                  <h2 className="title">{this.state.user.username}</h2>
-                  <h2 className="title">{this.state.user.email}</h2>
-                  <h2 className="title">{this.state.user.bio}</h2>
-
-                </div>
-              </div>
-            </article>
-            <div className="media-right">
-              <Link className="button" to={`/users/${this.state.user._id}/edit`}>Edit</Link>
-              <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+        <figure className="media-content-image">
+          <p className="image is-128x128">
+            <img src="{this.state.users.image}" />
+          </p>
+        </figure>
+        <article className="media">
+          <div className="media-content">
+            <div className="content">
+              <h4 className="title">Username: {this.state.user.username}</h4>
+              <h4 className="title">Email: {this.state.user.email}</h4>
+              <h4 className="title">Bio: {this.state.user.bio}</h4>
             </div>
           </div>
-        </section>
+        </article>
+        <div className="media-right">
+          <Link className="button" to={`/users/${this.state.user._id}/edit`}>Edit</Link>
+          <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+        </div>
       </section>
     );
   }
