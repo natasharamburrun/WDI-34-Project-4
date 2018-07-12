@@ -24,11 +24,9 @@ class CheckoutForm extends React.Component {
         axios({
           url: '/api/charge',
           method: 'POST',
-          body: token.id,
-          data:
-          {
-            source: token.id,
-            amount: this.state
+          data: {
+            ...token,
+            amount: this.props.amount * 100
           }
           // headers: { 'Content-Type': 'text/plain' }
         })

@@ -41,7 +41,7 @@ class ItemsShow extends React.Component {
           <div className="content">
             <h2 className="title">{this.state.item.designerName}</h2>
             <h4 className="title">{this.state.item.itemDescription}</h4>
-            <h2 className="title">{this.state.item.price}</h2>
+            <h2 className="title">£{this.state.item.price}</h2>
           </div>
           <div className="card">
             <div className="content-top">
@@ -78,7 +78,7 @@ class ItemsShow extends React.Component {
               <StripeProvider apiKey="pk_test_PjW7wZQs7SGqM4qnWg47WytW">
                 <div className="example">
                   <Elements>
-                    <CheckoutForm />
+                    <CheckoutForm amount={this.state.item.price}/>
                   </Elements>
                 </div>
               </StripeProvider>
