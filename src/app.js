@@ -5,6 +5,7 @@ import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Account from './components/pages/Account';
 import UsersShow from './components/Users/Show';
+import UsersEdit from './components/Users/Edit';
 import ItemsIndex from './components/Items/Index';
 import ItemsShow from './components/Items/Show';
 import ItemsNew from './components/Items/New';
@@ -15,29 +16,25 @@ import Header from './components/common/Header';
 import FlashMessages from './components/common/FlashMessages';
 import ProtectedRoute from './components/common/ProtectedRoute';
 import NotFound from './components/pages/NotFound';
-import ReactFilestack from 'filestack-react';
 
 import 'bulma';
 import './scss/style.scss';
 
 class App extends React.Component {
+
   render() {
     return (
       <BrowserRouter>
         <main>
           <Header />
           <FlashMessages />
-          {/* <ReactFilestack
-            apikey={'AbEqJmhCVTTmU0EfzPrSoz'}
-            mode="upload"
-            options={options}
-            onSuccess={onSuccess}
-          /> */}
+
           <section className="section">
             <div className="container">
               <Switch>
-                <ProtectedRoute path="/items/new" component={ItemsNew} />
+                <ProtectedRoute path="/users/:id/edit" component={UsersEdit} />
                 <ProtectedRoute path="/items/:id/edit" component={ItemsEdit} />
+                <ProtectedRoute path="/items/new" component={ItemsNew} />
                 <Route path="/users/:id" component={UsersShow}/>
                 <Route path="/items/:id" component={ItemsShow} />
                 <Route path="/items" component={ItemsIndex} />

@@ -6,8 +6,7 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  url: String,
-  image: { type: String, default: 'https://i.pinimg.com/736x/b8/ba/41/b8ba41e527bcc05c9dde6bed6422d58f--imvu-art-pics.jpg'},
+  image: { type: String, default: 'https://thumbs.dreamstime.com/b/cute-vector-girl-avatar-icon-young-woman-face-pretty-lady-port-portrait-cartoon-illustration-beautiful-brunette-76317393.jpg'},
   bio: { type: String, default: 'Change your bio!' }
 }, {
   id: false

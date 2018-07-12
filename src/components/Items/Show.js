@@ -40,15 +40,11 @@ class ItemsShow extends React.Component {
         <div className="column is-half">
           <div className="content">
             <h2 className="title">{this.state.item.designerName}</h2>
+            <hr />
             <h4 className="title">{this.state.item.itemDescription}</h4>
             <h2 className="title">£{this.state.item.price}</h2>
-          </div>
-          <div className="card">
-            <div className="content-top">
-              <a className="button is-black">Buy Now</a>
-              {/* <a className="button is-dark">Bid</a> */}
-              <ion-icon is-large name="star">Add to wishlist</ion-icon>
-            </div>
+            <a className="button is-black">Buy Now</a>
+            <ion-icon is-large name="star">Add to wishlist</ion-icon>
           </div>
           <div className="card">
             <div className="content-mid">
@@ -60,29 +56,29 @@ class ItemsShow extends React.Component {
               <h4 className="title">Material: {this.state.item.material}</h4>
               <h4 className="title">Colour: {this.state.item.colour}</h4>
             </div>
-            <div className="content-bottom">
-              <h3 className="title is-3">Payment</h3>
-            </div>
-            <div className="content-payment">
-              <h3 className="title is-3">Delivery</h3>
-              <ul>
-                <li>Hermes £2.79</li>
-                <li>Royal Mail Standard 2nd Class £2.95</li>
-                <li>Royal Mail Signed 2nd Class £3.95</li>
-              </ul>
-              <hr />
-              <Link className="button" to={`/items/${this.state.item._id}/edit`}>Edit</Link>
-              <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
-              <hr />
+          </div>
+          {/* <div className="content-bottom">
+            <h3 className="title is-3">Payment</h3>
+          </div> */}
+          <div className="content-payment">
+            <h3 className="title is-3">Delivery</h3>
+            <ul>
+              <li>Hermes £2.79</li>
+              <li>Royal Mail Standard 2nd Class £2.95</li>
+              <li>Royal Mail Signed 2nd Class £3.95</li>
+            </ul>
+            <hr />
+            <Link className="button" to={`/items/${this.state.item._id}/edit`}>Edit</Link>
+            <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+            <hr />
 
-              <StripeProvider apiKey="pk_test_PjW7wZQs7SGqM4qnWg47WytW">
-                <div className="example">
-                  <Elements>
-                    <CheckoutForm amount={this.state.item.price}/>
-                  </Elements>
-                </div>
-              </StripeProvider>
-            </div>
+            <StripeProvider apiKey="pk_test_PjW7wZQs7SGqM4qnWg47WytW">
+              <div className="example">
+                <Elements>
+                  <CheckoutForm amount={this.state.item.price}/>
+                </Elements>
+              </div>
+            </StripeProvider>
           </div>
         </div>
       </div>
