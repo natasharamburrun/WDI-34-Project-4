@@ -1,6 +1,5 @@
 const User = require('../models/user');
 
-
 function showRoute(req, res, next) {
   User.findById(req.params.id)
     .then(user => res.json(user))
@@ -21,7 +20,6 @@ function deleteRoute(req, res, next) {
     .then(() => res.sendStatus(204))
     .catch(next);
 }
-
 
 module.exports = {
   show: showRoute,
