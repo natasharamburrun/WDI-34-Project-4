@@ -43,7 +43,7 @@ class ItemsShow extends React.Component {
             <hr />
             <h4 className="title">{this.state.item.itemDescription}</h4>
             <h2 className="title">£{this.state.item.price}</h2>
-            <a className="button is-black">Buy Now</a>
+            <Link className="button is-black" to={`/items/${this.state.item._id}/payment`}>Buy Now</Link>
             <ion-icon is-large name="star">Add to wishlist</ion-icon>
           </div>
           <div className="card">

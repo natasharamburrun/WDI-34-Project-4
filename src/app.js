@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Account from './components/pages/Account';
+import Payment from './components/Users/Payment';
 import UsersShow from './components/Users/Show';
 import UsersEdit from './components/Users/Edit';
 import ItemsIndex from './components/Items/Index';
@@ -34,14 +35,15 @@ class App extends React.Component {
               <Switch>
                 <ProtectedRoute path="/users/:id/edit" component={UsersEdit} />
                 <ProtectedRoute path="/items/:id/edit" component={ItemsEdit} />
+                <Route path="/items/:id/payment" component={Payment}/>
                 <ProtectedRoute path="/items/new" component={ItemsNew} />
                 <Route path="/users/:id" component={UsersShow}/>
                 <Route path="/items/:id" component={ItemsShow} />
                 <Route path="/items" component={ItemsIndex} />
                 <Route path="/login" component={AuthLogin} />
                 <Route path="/register" component={AuthRegister} />
+                <Route path="/account" component={Account}/>
                 <Route exact path="/about" component={About}/>
-                <Route exact path="/account" component={Account}/>
                 <Route exact path="/" component={Home}/>
                 <Route component={NotFound} />
               </Switch>

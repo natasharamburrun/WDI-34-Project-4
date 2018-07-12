@@ -8,19 +8,21 @@
   margin-right: -50px;
   margin-left: -50px;
   display: inline-flex;
+  margin-left: 40%;
   padding: 10px;
 
 }
 
-.div-content h4 {
-  padding: 10px;
+.media-content h4.title {
+  margin: 10px;
 }
 
 .media-content-image img  {
   max-height: 150px;
   max-width: 150px;
+  border-radius: 50%;
 }
-
-.section {
-  background-color: white;
-}
+//
+// .section {
+//   background-color: white;
+// }

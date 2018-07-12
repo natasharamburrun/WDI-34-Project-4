@@ -30,7 +30,7 @@ const ItemsForm = ({ handleChange, handleSubmit, data }) => {
       </div>
 
       <div className="field">
-        <label className="label">Rrp</label>
+        <label className="label">rrp</label>
         <input className="input" name="rrp" placeholder="rrp" onChange={handleChange} value={data.rrp || ''}/>
       </div>
 

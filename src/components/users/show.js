@@ -60,9 +60,8 @@ class UsersShow extends React.Component {
         <article className="media">
           <div className="media-content">
             <div className="content">
-              <h4 className="title">Username: {this.state.user.username}</h4>
-              <h4 className="title">Email: {this.state.user.email}</h4>
-              <h4 className="title">Bio: {this.state.user.bio}</h4>
+              <h4 className="title"><strong>{this.state.user.username}</strong></h4>
+              <h4 className="title">Bio:<br/>{this.state.user.bio}</h4>
             </div>
             <div className="media-right">
               {/* <Link className="button" to={`/users/${this.state.user._id}/edit`}>Edit</Link> */}
