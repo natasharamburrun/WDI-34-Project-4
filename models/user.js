@@ -13,6 +13,12 @@ const userSchema = new mongoose.Schema({
   //this dont make an ID virtual
 });
 
+userSchema.virtual('owners', {
+  localField: '_id',
+  foreignField: 'user',
+  Ref: 'Item'
+});
+
 userSchema.set('toJSON', {
   virtuals: true,
   transform(doc, json) {

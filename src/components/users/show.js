@@ -26,7 +26,8 @@ class UsersShow extends React.Component {
   }
 
   handleFilestack = (res) => {
-    this.setState({ filesUploaded: res.filesUploaded[0].url });
+    const user = { ...this.state.user, image: res.filesUploaded[0].url };
+    this.setState({ user });
   }
 
 
@@ -40,8 +41,8 @@ class UsersShow extends React.Component {
             <img src={this.state.user.image} />
           </p>
         </figure>
-        {/* <figure className="media-content-image">
-          <ReactFilestack
+        <figure className="media-content-image">
+          {/* <ReactFilestack
             apikey={'AbEqJmhCVTTmU0EfzPrSoz'}
             options={{
               accept: ['image/*'],
@@ -55,14 +56,21 @@ class UsersShow extends React.Component {
                 <button onClick={onPick}>Upload Photo</button>
               </div>
             )}
-          />
-        </figure> */}
+          /> */}
+        </figure>
         <article className="media">
           <div className="media-content">
             <div className="content">
               <h4 className="title"><strong>{this.state.user.username}</strong></h4>
               <h4 className="title">Bio:<br/>{this.state.user.bio}</h4>
             </div>
+
+            {/* ***********ADD FOLLOWS ************* */}
+
+            {/* ***********ADD FAVOURITE *********** */}
+
+            {/* ***********ADD FOR SALE ITEMS *********** */}
+
             <div className="media-right">
               {/* <Link className="button" to={`/users/${this.state.user._id}/edit`}>Edit</Link> */}
               <button className="button is-danger" onClick={this.handleDelete}>Delete</button>

@@ -7,11 +7,13 @@ function indexRoute(req, res, next) {
 }
 function showRoute(req, res, next) {
   Item.findById(req.params.id)
+    .populate('user')
     .then(item => res.json(item))
     .catch(next);
 }
 
 function createRoute(req, res, next) {
+  req.body.user = req.currentUser;
   Item.create(req.body)
     .then(item => res.status(201).json(item))
     .catch(next);

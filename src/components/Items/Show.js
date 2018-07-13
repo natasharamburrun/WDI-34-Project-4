@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import {Elements, StripeProvider} from 'react-stripe-elements';
-import CheckoutForm from '../payment/CheckoutForm';
+// import {Elements, StripeProvider} from 'react-stripe-elements';
+// import CheckoutForm from '../payment/CheckoutForm';
 import Auth from '../../lib/Auth';
 
 class ItemsShow extends React.Component {
@@ -28,6 +28,7 @@ class ItemsShow extends React.Component {
   };
 
   render() {
+    console.log(this.state.item);
     if(this.state.error) return <h2 className="title is-2">{this.state.error}</h2>;
     if(!this.state.item) return <h2 className="title is-2">Loading...</h2>;
     return (
@@ -50,8 +51,15 @@ class ItemsShow extends React.Component {
             <ion-icon is-large name="star">Add to wishlist</ion-icon>
           </div>
           <div className="coments">
-
           </div>
+
+          <h3 className="title">Profile</h3>
+          {/* <h2 className="title">{this.state.item.user.username}</h2> */}
+
+          <hr />
+
+
+          {/* ***********SHOW SELLERS PROFILE*********** */}
 
           {/* *****rightside of the page******  */}
 
@@ -66,7 +74,7 @@ class ItemsShow extends React.Component {
               <h4 className="title">Colour: {this.state.item.colour}</h4>
             </div>
           </div>
-          <div className="content-payment">
+          {/* <div className="content-payment">
             <h3 className="title is-3">Payment</h3>
             <StripeProvider apiKey="pk_test_PjW7wZQs7SGqM4qnWg47WytW">
               <div className="cardpayment">
@@ -75,7 +83,7 @@ class ItemsShow extends React.Component {
                 </Elements>
               </div>
             </StripeProvider>
-          </div>
+          </div> */}
           <div className="content-delivery">
             <h3 className="title is-3">Delivery</h3>
             <ul>
@@ -88,6 +96,7 @@ class ItemsShow extends React.Component {
             <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
             <hr />
 
+            {/* **************ADD COMMENTS**************** */}
           </div>
         </div>
       </div>

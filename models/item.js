@@ -1,5 +1,11 @@
 const mongoose = require('mongoose');
 
+const commentSchema = new mongoose.Schema({
+  content: { type: String, required: true },
+  author: { type: mongoose.Schema.ObjectId, ref: 'User', required: true},
+  rating: { type: Number, min: 1, max: 5}
+});
+
 const itemSchema = new mongoose.Schema({
   itemCategory: {type: String, required: 'This field is required'},
   itemDescription: {type: String, required: 'This field is required'},
@@ -10,7 +16,14 @@ const itemSchema = new mongoose.Schema({
   material: String,
   condition: {type: String, required: 'This field is required'},
   colour: String,
-  image: {type: String, required: 'This field is required'}
+  image: {type: String, required: 'This field is required'},
+  user: { type: mongoose.Schema.ObjectId, ref: 'User' },
+  comments: [ commentSchema ]
+});
+
+
+itemSchema.set('toJSON', {
+  virtuals: true
 });
 
 module.exports = mongoose.model('items', itemSchema);

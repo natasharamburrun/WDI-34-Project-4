@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Account from './components/pages/Account';
+import PaymentPage from './components/pages/PaymentPage';
 import CheckoutForm from './components/payment/CheckoutForm';
 import UsersShow from './components/Users/Show';
 import UsersEdit from './components/Users/Edit';
@@ -35,6 +36,7 @@ class App extends React.Component {
               <Switch>
                 <ProtectedRoute path="/users/:id/edit" component={UsersEdit} />
                 <ProtectedRoute path="/items/:id/edit" component={ItemsEdit} />
+                <Route path="/items/:id/payment" component={PaymentPage}/>
                 <Route path="/items/:id/checkout" component={CheckoutForm}/>
                 <ProtectedRoute path="/items/new" component={ItemsNew} />
                 <Route path="/users/:id" component={UsersShow}/>
