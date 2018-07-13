@@ -32,6 +32,8 @@ class CheckoutForm extends React.Component {
           // headers: { 'Content-Type': 'text/plain' }
         })
           .then(res => console.log(res.data));
+        // .then(res => this.setState ({ charge: res.data})
+
       });
   }
 
@@ -40,7 +42,7 @@ class CheckoutForm extends React.Component {
 
     return (
       <div className="checkout">
-        <p>Would you like to complete the purchase?</p>
+        <p>Complete your purchase</p>
         <CardElement />
         {/* creates a card type element that mounts the page when Component renders */}
         <button onClick={this.submit}>Send</button>

@@ -1,8 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-// import {Elements, StripeProvider} from 'react-stripe-elements';
-// import CheckoutForm from '../payment/CheckoutForm';
 import Auth from '../../lib/Auth';
 
 class ItemsShow extends React.Component {
@@ -40,7 +38,28 @@ class ItemsShow extends React.Component {
           <figure className="image">
             <img src={this.state.item.image} />
           </figure>
+          <hr />
+          <div className="card-content">
+            <div className="media">
+              <div className="media-left">
+                <figure className="image is-48x48">
+                  <img src={this.state.item.user.image} />
+                </figure>
+              </div>
+              <div className="media-content">
+                <p className="title is-4">{this.state.item.user.username}</p>
+                <p className="subtitle is-6">@johnsmith</p>
+              </div>
+            </div>
+            <div className="content">
+            Lorsum dolor sit amet, consectetur adipiscing elit.
+            Phasellus nec iaculis mauris.
+            </div>
+          </div>
         </div>
+
+        {/* *****rightside of the page******  */}
+
         <div className="column is-half">
           <div className="content">
             <h2 className="title">{this.state.item.designerName}</h2>
@@ -50,18 +69,7 @@ class ItemsShow extends React.Component {
             <Link className="button is-black" to={`/items/${this.state.item._id}/checkout`}>Buy Now</Link>
             <ion-icon is-large name="star">Add to wishlist</ion-icon>
           </div>
-          <div className="comments">
-          </div>
-
-          <h3 className="title">Profile</h3>
-          <h2 className="title">{this.state.item.user.username}</h2>
           <hr />
-
-
-          {/* ***********SHOW SELLERS PROFILE*********** */}
-
-          {/* *****rightside of the page******  */}
-
           <div className="card">
             <div className="content-mid">
               <h3 className="title is-3">Product description</h3>
@@ -73,16 +81,6 @@ class ItemsShow extends React.Component {
               <h4 className="title">Colour: {this.state.item.colour}</h4>
             </div>
           </div>
-          {/* <div className="content-payment">
-            <h3 className="title is-3">Payment</h3>
-            <StripeProvider apiKey="pk_test_PjW7wZQs7SGqM4qnWg47WytW">
-              <div className="cardpayment">
-                <Elements>
-                  <CheckoutForm amount={this.state.item.price}/>
-                </Elements>
-              </div>
-            </StripeProvider>
-          </div> */}
           <div className="content-delivery">
             <h3 className="title is-3">Delivery</h3>
             <ul>
@@ -94,6 +92,8 @@ class ItemsShow extends React.Component {
             <Link className="button" to={`/items/${this.state.item._id}/edit`}>Edit</Link>
             <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
             <hr />
+            <div className="comments">
+            </div>
 
             {/* **************ADD COMMENTS**************** */}
           </div>
