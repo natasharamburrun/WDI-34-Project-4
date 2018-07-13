@@ -25,9 +25,9 @@ class UsersShow extends React.Component {
       .then(() => this.props.history.push('/users'));
   }
 
-  // handleFilestack = (res) => {
-  //   this.setState({ filesUploaded: res.filesUploaded[0].url });
-  // }
+  handleFilestack = (res) => {
+    this.setState({ filesUploaded: res.filesUploaded[0].url });
+  }
 
 
   render() {
@@ -40,8 +40,8 @@ class UsersShow extends React.Component {
             <img src={this.state.user.image} />
           </p>
         </figure>
-
-        {/* /* <ReactFilestack
+        {/* <figure className="media-content-image">
+          <ReactFilestack
             apikey={'AbEqJmhCVTTmU0EfzPrSoz'}
             options={{
               accept: ['image/*'],
@@ -55,8 +55,8 @@ class UsersShow extends React.Component {
                 <button onClick={onPick}>Upload Photo</button>
               </div>
             )}
-          /> */}
-
+          />
+        </figure> */}
         <article className="media">
           <div className="media-content">
             <div className="content">

@@ -32,6 +32,9 @@ class ItemsShow extends React.Component {
     if(!this.state.item) return <h2 className="title is-2">Loading...</h2>;
     return (
       <div className="columns">
+
+        {/* *****leftside of the page***** */}
+
         <div className="column is-half">
           <figure className="image">
             <img src={this.state.item.image} />
@@ -43,9 +46,15 @@ class ItemsShow extends React.Component {
             <hr />
             <h4 className="title">{this.state.item.itemDescription}</h4>
             <h2 className="title">£{this.state.item.price}</h2>
-            <Link className="button is-black" to={`/items/${this.state.item._id}/payment`}>Buy Now</Link>
+            <Link className="button is-black" to={`/items/${this.state.item._id}/checkout`}>Buy Now</Link>
             <ion-icon is-large name="star">Add to wishlist</ion-icon>
           </div>
+          <div className="coments">
+
+          </div>
+
+          {/* *****rightside of the page******  */}
+
           <div className="card">
             <div className="content-mid">
               <h3 className="title is-3">Product description</h3>
@@ -57,10 +66,17 @@ class ItemsShow extends React.Component {
               <h4 className="title">Colour: {this.state.item.colour}</h4>
             </div>
           </div>
-          {/* <div className="content-bottom">
-            <h3 className="title is-3">Payment</h3>
-          </div> */}
           <div className="content-payment">
+            <h3 className="title is-3">Payment</h3>
+            <StripeProvider apiKey="pk_test_PjW7wZQs7SGqM4qnWg47WytW">
+              <div className="cardpayment">
+                <Elements>
+                  <CheckoutForm amount={this.state.item.price}/>
+                </Elements>
+              </div>
+            </StripeProvider>
+          </div>
+          <div className="content-delivery">
             <h3 className="title is-3">Delivery</h3>
             <ul>
               <li>Hermes £2.79</li>
@@ -72,13 +88,6 @@ class ItemsShow extends React.Component {
             <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
             <hr />
 
-            <StripeProvider apiKey="pk_test_PjW7wZQs7SGqM4qnWg47WytW">
-              <div className="example">
-                <Elements>
-                  <CheckoutForm amount={this.state.item.price}/>
-                </Elements>
-              </div>
-            </StripeProvider>
           </div>
         </div>
       </div>

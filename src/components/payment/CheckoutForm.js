@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 
+
 //Create the payment form component
 //CardElement inputs for all of the major card fields: the card number, the expiration date, and the CVC
 
