@@ -19,6 +19,10 @@ router.route('/items/:id/')
   .put(secureRoute, items.update)
   .delete(secureRoute, items.delete);
 
+router.post('/items/:id/comments', secureRoute, items.commentCreate);
+router.delete('/items/:id/comments/:commentId', secureRoute, items.commentDelete);
+
+
 router.post('/register', auth.register);
 router.post('/login', auth.login);
 

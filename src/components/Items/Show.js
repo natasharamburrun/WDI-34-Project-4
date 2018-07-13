@@ -18,12 +18,32 @@ class ItemsShow extends React.Component {
 
   handleDelete = () => {
     axios({
-      url: `/api/items/${this. props.match.params.id}`,
+      url: `/api/items/${this.props.match.params.id}`,
       method: 'DELETE',
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
       .then(() => this.props.history.push('/items'));
-  };
+  }
+
+  createComment() {
+    console.log(this.state.item.comments);
+    axios({
+      url: `/api/items/${this.props.match.params.id}/comments`,
+      method: 'POST',
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(res => this.setState({ items: res.data})
+      );
+  }
+
+  deleteComment() {
+    axios({
+      url: `/api/items/${this.props.match.params.id}/comments/${comment._id}`,
+      method: 'DELETE'
+    })
+      .then(res => this.setState({ items: res.data})
+      );
+  }
 
   render() {
     console.log(this.state.item);
@@ -92,10 +112,31 @@ class ItemsShow extends React.Component {
             <Link className="button" to={`/items/${this.state.item._id}/edit`}>Edit</Link>
             <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
             <hr />
-            <div className="comments">
-            </div>
 
             {/* **************ADD COMMENTS**************** */}
+
+            <article className="media">
+              {/* <figure className="media-left">
+                <p className="image is-64x64">
+                  <img src={this.state.item.comments.image} />
+                </p>
+              </figure> */}
+              <div className="media-content">
+                <div className="content">
+                  <div className="field">
+                    <label className="label">Leave a comment for the seller</label>
+                    <textarea className="textarea"></textarea>
+                  </div>
+                  <button className="button is-primary">Submit</button>
+                  <strong>{this.state.item.comments.author}</strong>
+                  <strong>{this.state.item.comments.content}</strong>
+                  <div className="media-right">
+                    <button className="delete"></button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
           </div>
         </div>
       </div>

@@ -34,10 +34,35 @@ function deleteRoute(req, res, next) {
     .catch(next);
 }
 
+function commentCreateRoute(req, res, next) {
+  req.body.author = req.currentUser;
+  Item.findById(req.params.id)
+    .populate('comments.author')
+    .then(boat => {
+      boat.comments.push(req.body);
+      return boat.save();
+    })
+    .then(boat => res.json(boat))
+    .catch(next);
+}
+
+function commentDeleteRoute(req, res, next) {
+  Item.findById(req.params.id)
+    .then(boat => {
+      const comment = boat.comments.id(req.params.commentId);
+      comment.remove();
+      return boat.save();
+    })
+    .then(boat => res.json(boat))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
   create: createRoute,
   update: updateRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  commentCreate: commentCreateRoute,
+  commentDelete: commentDeleteRoute
 };
