@@ -21,6 +21,7 @@ class PaymentPage extends React.Component {
 
   render() {
     return (
+      
       <div className="content-payment">
         <h3 className="title is-3">Payment</h3>
         <StripeProvider apiKey="pk_test_PjW7wZQs7SGqM4qnWg47WytW">

@@ -50,12 +50,11 @@ class ItemsShow extends React.Component {
             <Link className="button is-black" to={`/items/${this.state.item._id}/checkout`}>Buy Now</Link>
             <ion-icon is-large name="star">Add to wishlist</ion-icon>
           </div>
-          <div className="coments">
+          <div className="comments">
           </div>
 
           <h3 className="title">Profile</h3>
-          {/* <h2 className="title">{this.state.item.user.username}</h2> */}
-
+          <h2 className="title">{this.state.item.user.username}</h2>
           <hr />
 
 
