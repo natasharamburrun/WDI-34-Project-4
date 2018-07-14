@@ -1,28 +1,9 @@
 
-
-.content-mid {
-  // font-family: 'Gilda Display', serif;
-  // font-size: 18px;
-  // margin: 20px;
-  // h2 {
-  //   font-family: 'Gilda Display', serif;
-  //   font-size: 22px;
-  //   color: red;
-  // }
-}
-
-.content-mid {
-  padding: 12px;
-}
-
-.content .button is-black {
-
-}
-
 .card-content-profile .media {
   background-color: white;
   display: inline-block;
   padding: 47px;
+  border: 1px solid #dfdfdf;
 }
 
 .content-itemdes {
@@ -48,4 +29,8 @@
 .content-delivery {
   padding-left: 20px;
   padding-top: 15px;
+}
+
+.image.is-square img {
+  border: 1px solid #dfdfdf;
 }

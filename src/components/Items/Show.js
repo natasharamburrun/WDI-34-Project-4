@@ -137,7 +137,11 @@ class ItemsShow extends React.Component {
               <li>Royal Mail Signed 2nd Class £3.95</li>
             </ul>
             <hr />
-            <Link className="button" to={`/items/${this.state.item._id}/edit`}>Edit</Link>
+
+          </div>
+          <div className="content-admin">
+            <h5 className="title is-5">Admin</h5>
+            <Link className="button" to={`/items/${this.state.item._id}/edit`}>Edit</Link><br/>
             <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
             <hr />
           </div>
