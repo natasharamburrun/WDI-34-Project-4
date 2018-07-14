@@ -40,6 +40,7 @@ mongoose.connect(dbURI, (err, db) => {
       condition: 'Hardly Ever Worn/Used',
       material: 'Wool/Cotton Mix',
       colour: 'Multi-Coloured / Stripe',
+      shipping: 'Royal Mail Signed 2nd Class £3.95',
       salePitch: 'BLACK WITH VIBRANT PRINT, PULLED AT WAIST, V NECKLINE ZIPS AT BACK, HALF LINED',
       image: 'https://d38r3tbvwkical.cloudfront.net/images/144/picture/144795_1.jpg?c=1528467935',
       user: users[0]
