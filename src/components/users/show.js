@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 // import { Link } from 'react-router-dom';
 import Auth from '../../lib/Auth';
-// import ReactFilestack from 'filestack-react';
+import ReactFilestack from 'filestack-react';
 
 class UsersShow extends React.Component {
 
@@ -41,23 +41,35 @@ class UsersShow extends React.Component {
             <img src={this.state.user.image} />
           </p>
         </figure>
-        <figure className="media-content-image">
-          {/* <ReactFilestack
+
+        <div className="field">
+          <label htmlFor="cv"><i className="fas fa-upload"></i>&nbsp; <strong>Upload your CV</strong></label> <br />
+          {this.state.cv && <p><a target="_blank" href={this.state.cv}><strong>Preview your CV here</strong></a></p>}
+          <ReactFilestack
+            apikey='AbEqJmhCVTTmU0EfzPrSoz'
+            buttonText="Click to upload"
+            buttonClass="button"
+            options={this.options}
+            onSuccess={res => this.handleFilestack(res)}
+          />
+        </div>
+        {/* <figure className="media-content-image">
+          <ReactFilestack
             apikey={'AbEqJmhCVTTmU0EfzPrSoz'}
             options={{
               accept: ['image/*'],
               maxSize: 500 * 500,
               maxFiles: 1
             }}
-            onSuccess={this.handleFilestack}
+            onSuccess={res => this.handleFilestack(res)}
             render={({ onPick }) => (
               <div>
                 <img src={this.state.filesUploaded} />
                 <button onClick={onPick}>Upload Photo</button>
               </div>
             )}
-          /> */}
-        </figure>
+          />
+        </figure> */}
         <article className="media">
           <div className="media-content">
             <div className="content">
@@ -70,10 +82,8 @@ class UsersShow extends React.Component {
             {/* ***********ADD FAVOURITE *********** */}
 
             {/* ***********ADD FOR SALE ITEMS *********** */}
-
             <div className="media-right">
-              {/* <Link className="button" to={`/users/${this.state.user._id}/edit`}>Edit</Link> */}
-              <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+              {Auth.getPayload().sub === this.state.user._id && <button onClick={this.handleDelete} className="button warning">Delete</button>}
             </div>
           </div>
         </article>

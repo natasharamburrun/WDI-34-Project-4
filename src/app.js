@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
-import Account from './components/pages/Account';
 import PaymentPage from './components/pages/PaymentPage';
 import UsersShow from './components/Users/Show';
 import UsersEdit from './components/Users/Edit';
@@ -42,7 +41,6 @@ class App extends React.Component {
                 <Route path="/items" component={ItemsIndex} />
                 <Route path="/login" component={AuthLogin} />
                 <Route path="/register" component={AuthRegister} />
-                <Route path="/account" component={Account}/>
                 <Route exact path="/about" component={About}/>
                 <Route exact path="/" component={Home}/>
                 <Route component={NotFound} />

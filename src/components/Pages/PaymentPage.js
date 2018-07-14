@@ -19,7 +19,7 @@ class PaymentPage extends React.Component {
   }
 
   render() {
-    
+
     return (
 
       <div className="content-payment">

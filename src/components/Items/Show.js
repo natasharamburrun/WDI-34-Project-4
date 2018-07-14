@@ -136,8 +136,10 @@ class ItemsShow extends React.Component {
           </div>
           <div className="content-admin">
             <h5 className="title is-5">Admin</h5>
-            <Link className="button" to={`/items/${this.state.item._id}/edit`}>Edit</Link><br/>
-            <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+
+            {Auth.getPayload().sub === this.state.item.user._id && <Link to={`/items/${this.state.item._id}/edit`} className="button info">Edit</Link>}
+
+            {Auth.getPayload().sub === this.state.item.user._id && <button onClick={this.handleDelete} className="button warning">Delete</button>}
             <hr />
           </div>
         </div>
