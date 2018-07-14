@@ -52,6 +52,7 @@ mongoose.connect(dbURI, (err, db) => {
       condition: 'Hardly Ever Worn/Used',
       material: 'Silk',
       colour: 'Multi-Coloured / Stripe',
+      shipping: 'Hermes £2.79',
       image: 'https://d38r3tbvwkical.cloudfront.net/images/144/picture/144040_1.jpg?c=1527840269',
       user: users[1]
     }, {
@@ -64,6 +65,7 @@ mongoose.connect(dbURI, (err, db) => {
       condition: 'Hardly Ever Worn/Used',
       material: '100% Wool',
       colour: 'Red',
+      shipping: 'Royal Mail Standard 2nd Class £2.95',
       image: 'https://d38r3tbvwkical.cloudfront.net/images/119/picture/119820_1.jpg?c=1529852233',
       user: users[2]
     }, {
@@ -76,6 +78,7 @@ mongoose.connect(dbURI, (err, db) => {
       condition: 'Never Worn Without Tags',
       material: 'Silk Stretch Knit',
       colour: 'Red',
+      shipping: 'Royal Mail Signed 2nd Class £3.95',
       image: 'https://d38r3tbvwkical.cloudfront.net/images/137/picture/137532_1.jpg?c=1527010690',
       user: users[3]
     }]))

@@ -42,11 +42,19 @@ class ItemsNew extends React.Component {
 
   render() {
     return (
-      <ItemsForm
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-        data={this.state}
-      />
+      <div className="card-content-new">
+        <div className="content-font">
+          <h3 className="title"><strong>Sell an item</strong></h3>
+          <h3 className="title">Boost your shopping budget and re-claim space in your wardrobe by selling your designer pieces</h3>
+          <img src= 'https://i.imgur.com/WRsRDLd.png?1'/>
+          <ItemsForm
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            data={this.state}
+          />
+        </div>
+      </div>
+
     );
   }
 }

@@ -16,7 +16,7 @@ const ItemsForm = ({ handleChange, handleSubmit, data }) => {
 
       <div className="field">
         <label className="label">Item Description</label>
-        <input className="input" name="itemDescription" placeholder="itemDescription" onChange={handleChange} value={data.itemDescription || ''}/>
+        <textarea className="input" name="itemDescription" placeholder="itemDescription" onChange={handleChange} value={data.itemDescription || ''}/>
       </div>
 
       <div className="field">
@@ -52,6 +52,11 @@ const ItemsForm = ({ handleChange, handleSubmit, data }) => {
       <div className="field">
         <label className="label">Image</label>
         <input className="input" name="image" placeholder="image" onChange={handleChange} value={data.image || ''}/>
+      </div>
+
+      <div className="field">
+        <label className="label">Shipping</label>
+        <textarea className="input" name="shipping" placeholder="Shipping" onChange={handleChange} value={data.shipping || ''}/>
       </div>
 
       <button className="button">Submit</button>

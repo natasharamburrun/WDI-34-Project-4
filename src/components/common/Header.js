@@ -37,7 +37,7 @@ class Header extends React.Component {
             <div className={`navbar-menu${this.state.navbarOpen ? ' is-active' : ''}`}>
               <div className="navbar-start">
                 <Link to="/about" className="navbar-item">About</Link>
-                {Auth.isAuthenticated() && <Link to="/items/new" className="navbar-item">New Item</Link>}
+                {Auth.isAuthenticated() && <Link to="/items/new" className="navbar-item">Sell now</Link>}
               </div>
 
               <div className="navbar-end">

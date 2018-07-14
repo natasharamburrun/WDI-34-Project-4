@@ -131,11 +131,7 @@ class ItemsShow extends React.Component {
           <hr />
           <div className="content-delivery">
             <h5 className="title is-5">Delivery</h5>
-            <ul>
-              <li>Hermes £2.79</li>
-              <li>Royal Mail Standard 2nd Class £2.95</li>
-              <li>Royal Mail Signed 2nd Class £3.95</li>
-            </ul>
+            <h4 className="title">{this.state.item.shipping}</h4>
             <hr />
 
           </div>
