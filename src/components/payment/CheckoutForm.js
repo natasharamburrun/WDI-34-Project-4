@@ -32,13 +32,14 @@ class CheckoutForm extends React.Component {
           // headers: { 'Content-Type': 'text/plain' }
         })
           .then(res => console.log(res.data));
+
         // .then(res => this.setState ({ charge: res.data})
 
       });
   }
 
   render() {
-    if (this.state.complete) return <h1>Purchase Complete</h1>;
+    // if (this.setState({complete: true})) return <h1>Purchase Complete</h1>;
 
     return (
       <div className="checkout">

@@ -38,22 +38,22 @@ function commentCreateRoute(req, res, next) {
   req.body.author = req.currentUser;
   Item.findById(req.params.id)
     .populate('comments.author')
-    .then(boat => {
-      boat.comments.push(req.body);
-      return boat.save();
+    .then(item => {
+      item.comments.push(req.body);
+      return item.save();
     })
-    .then(boat => res.json(boat))
+    .then(item => res.json(item))
     .catch(next);
 }
 
 function commentDeleteRoute(req, res, next) {
   Item.findById(req.params.id)
-    .then(boat => {
-      const comment = boat.comments.id(req.params.commentId);
+    .then(item => {
+      const comment = item.comments.id(req.params.commentId);
       comment.remove();
-      return boat.save();
+      return item.save();
     })
-    .then(boat => res.json(boat))
+    .then(item => res.json(item))
     .catch(next);
 }
 

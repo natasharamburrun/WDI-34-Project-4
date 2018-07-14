@@ -41,7 +41,6 @@ class ItemsNew extends React.Component {
   }
 
   render() {
-
     return (
       <ItemsForm
         handleChange={this.handleChange}
