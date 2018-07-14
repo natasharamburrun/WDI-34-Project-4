@@ -18,6 +18,7 @@ const itemSchema = new mongoose.Schema({
   image: {type: String, required: 'This field is required'},
   shipping: String,
   user: { type: mongoose.Schema.ObjectId, ref: 'User' },
+  salePitch: String,
   comments: [ commentSchema ]
 });
 

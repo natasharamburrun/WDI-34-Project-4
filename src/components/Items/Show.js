@@ -71,11 +71,10 @@ class ItemsShow extends React.Component {
               </div>
               <div className="media-content">
                 <p className="title is-4">{this.state.item.user.username}</p>
-                <p className="subtitle is-6">@johnsmith</p>
-              </div>
-              <div className="content">
-                Lorsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris.
+                <div className="content-salePitch">
+                  <h2 className="title">Sale Discription</h2>
+                  <h2 className="title">{this.state.item.salePitch}</h2>
+                </div>
               </div>
             </div>
           </div>

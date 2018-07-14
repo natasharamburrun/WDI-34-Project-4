@@ -55,6 +55,11 @@ const ItemsForm = ({ handleChange, handleSubmit, data }) => {
       </div>
 
       <div className="field">
+        <label className="label">Sale Description</label>
+        <textarea className="input" name="salePitch" placeholder="Sale Description" onChange={handleChange} value={data.salePitch || ''}/>
+      </div>
+
+      <div className="field">
         <label className="label">Shipping</label>
         <textarea className="input" name="shipping" placeholder="Shipping" onChange={handleChange} value={data.shipping || ''}/>
       </div>
