@@ -8,7 +8,10 @@ class ItemsShow extends React.Component {
   constructor() {
     super();
     this.state = {
-      comments: []
+      data: {
+        author: [],
+        content: []
+      }
     };
   }
 
@@ -28,16 +31,9 @@ class ItemsShow extends React.Component {
       .then(() => this.props.history.push('/items'));
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    axios.post(`/api/items/${this.props.match.params.id}/comments`, this.state,
-      { headers: { Authorization: `Bearer ${Auth.getToken()}` }}
-    )
-      .then(res => console.log('saved comment', res))
-      .then(() => this.props.history.push('/items'));
-  }
-
-  // createComment() {
+  //
+  // handleSubmit = (e) => {
+  //   e.preventDefault();
   //   axios({
   //     url: `/api/items/${this.props.match.params.id}/comments`,
   //     method: 'POST',
@@ -47,6 +43,18 @@ class ItemsShow extends React.Component {
   //     .then(() => this.props.history.push('/items'));
   //
   // }
+  //
+  createComment() {
+    axios({
+      url: `/api/items/${this.props.match.params.id}/comments`,
+      method: 'POST',
+      data: this.state,
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(() => this.props.history.push('/items'))
+      .then(res => this.setState({ item: res.data }));
+
+  }
 
   deleteComment() {
     axios({
@@ -55,6 +63,10 @@ class ItemsShow extends React.Component {
     })
       .then(() => this.props.history.push('/items'));
 
+  }
+
+  handleChange = ({ target: { name, value }}) => {
+    this.setState({ [name]: value });
   }
 
   render() {
@@ -99,23 +111,21 @@ class ItemsShow extends React.Component {
               <div className="content">
                 <div className="field">
                   <label className="label">Leave a comment for the seller</label>
-                  <textarea className="textarea"></textarea>
-                  <button onClick={this.handleSubmit} className="button is-primary">Submit</button>
+                  <textarea className="input" name="createComment" placeholder="Write a comment"/>
+                  <button className="button success" onClick={() => this.createComment()}>Send</button>
                 </div>
-                <div className="content">
-                  <h4 className="title">{this.state.item.comments.author}</h4>
-                  <strong>{this.state.item.comments.content}</strong>
-                </div>
-                <div className="media-right">
-                  <button className="delete"></button>
-                </div>
+              </div>
+              <div className="content">
+                <h4 className="title">{this.state.item.comments.author}</h4>
+                <strong>{this.state.item.comments.content}</strong>
+              </div>
+              <div onChange={() => this.deleteComment()} className="media-right">
+                <button className="delete"></button>
               </div>
             </div>
           </article>
         </div>
-
-        {/* *****rightside of the page******  */}
-
+        {/* product detail */}
         <div className="column is-half">
           <div className="content-itemdes">
             <h2 className="title">{this.state.item.designerName}</h2>
@@ -125,7 +135,6 @@ class ItemsShow extends React.Component {
             <Link className="button is-black" to={`/items/${this.state.item._id}/checkout`}>Buy Now</Link>
           </div>
           <hr />
-          {/* <div className="card"> */}
           <div className="content-detail">
             <h5 className="title">Product description</h5>
             <h4 className="title">Item: {this.state.item.itemCategory}</h4>
@@ -135,7 +144,6 @@ class ItemsShow extends React.Component {
             <h4 className="title">Material: {this.state.item.material}</h4>
             <h4 className="title">Colour: {this.state.item.colour}</h4>
           </div>
-          {/* </div> */}
           <hr />
           <div className="content-delivery">
             <h5 className="title is-5">Delivery</h5>
