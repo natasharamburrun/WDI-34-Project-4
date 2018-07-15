@@ -6,3 +6,19 @@ form {
   margin:
   0 auto;
 }
+
+.container-join form {
+  width: 500px;
+  display: flex;
+  display:table;
+  height:100%;
+  margin:
+  0 auto;
+  p {
+    text-align: center;
+  }
+}
+
+.section .container-join {
+  min-height: 800px;
+}
