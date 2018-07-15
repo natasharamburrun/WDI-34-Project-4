@@ -1,0 +1,17 @@
+.card-content-join {
+  display: flex;
+  display:table;
+  margin:
+  0 auto;
+  text-align: center;
+  border: 1px solid grey;
+  padding: 30px 100px;
+}
+
+.card-content-homepage {
+  max-height: 150px;
+  padding: 20px;
+  h2 {
+    font-size: 16px;
+  }
+}

@@ -65,7 +65,7 @@ class ItemsIndex extends React.Component {
         <div className="container-content">
           <div className="columns is-multiline">
             {this.sortedAndFilteredItems().map(item =>
-              <div key={item._id} className="column is-one-third-desktop is-half-tablet">
+              <div key={item._id} className="column is-one-quarter-desktop is-half-tablet">
 
                 <Link to={`/items/${item._id}`}>
 
