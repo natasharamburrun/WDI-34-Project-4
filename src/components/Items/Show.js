@@ -28,16 +28,25 @@ class ItemsShow extends React.Component {
       .then(() => this.props.history.push('/items'));
   }
 
-  createComment() {
-    axios({
-      url: `/api/items/${this.props.match.params.id}/comments`,
-      method: 'POST',
-      data: this.state,
-      headers: { Authorization: `Bearer ${Auth.getToken()}` }
-    })
-      .then(res => this.setState({ items: res.data })
-      );
+  handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post(`/api/items/${this.props.match.params.id}/comments`, this.state,
+      { headers: { Authorization: `Bearer ${Auth.getToken()}` }}
+    )
+      .then(res => console.log('saved comment', res))
+      .then(() => this.props.history.push('/items'));
   }
+
+  // createComment() {
+  //   axios({
+  //     url: `/api/items/${this.props.match.params.id}/comments`,
+  //     method: 'POST',
+  //     data: this.state,
+  //     headers: { Authorization: `Bearer ${Auth.getToken()}` }
+  //   })
+  //     .then(() => this.props.history.push('/items'));
+  //
+  // }
 
   deleteComment() {
     axios({
@@ -91,7 +100,7 @@ class ItemsShow extends React.Component {
                 <div className="field">
                   <label className="label">Leave a comment for the seller</label>
                   <textarea className="textarea"></textarea>
-                  <button className="button is-primary">Submit</button>
+                  <button onClick={this.handleSubmit} className="button is-primary">Submit</button>
                 </div>
                 <div className="content">
                   <h4 className="title">{this.state.item.comments.author}</h4>
@@ -135,12 +144,10 @@ class ItemsShow extends React.Component {
 
           </div>
           <div className="content-admin">
-            <h5 className="title is-5">Admin</h5>
 
             {Auth.getPayload().sub === this.state.item.user._id && <Link to={`/items/${this.state.item._id}/edit`} className="button info">Edit</Link>}
 
             {Auth.getPayload().sub === this.state.item.user._id && <button onClick={this.handleDelete} className="button warning">Delete</button>}
-            <hr />
           </div>
         </div>
       </div>
