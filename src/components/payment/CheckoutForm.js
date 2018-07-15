@@ -39,7 +39,7 @@ class CheckoutForm extends React.Component {
   }
 
   render() {
-    // if (this.setState({complete: true})) return <h1>Purchase Complete</h1>;
+    // if(this.setState({complete: true})) return <h2 className="title is-2">Purchase Complete</h2>;
 
     return (
       <div className="checkout">

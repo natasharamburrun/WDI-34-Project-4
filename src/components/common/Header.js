@@ -41,6 +41,8 @@ class Header extends React.Component {
               </div>
 
               <div className="navbar-end">
+                {Auth.isAuthenticated() && <Link to="/users/" className="navbar-item">Members</Link>}
+
                 {Auth.isAuthenticated() && <Link to={`/users/${Auth.getPayload().sub}`}className="navbar-item">Profile</Link>}
 
                 {Auth.isAuthenticated() && <Link to={`/users/${Auth.getPayload().sub}/edit`} className="navbar-item">Account</Link>}
@@ -68,11 +70,11 @@ class Header extends React.Component {
           <nav className="tabs is-boxed is-fullwidth">
             <div className="container">
               <ul>
-                <li><Link to="/items" className="is-active">Clothes</Link></li>
-                <li><a>Bags</a></li>
-                <li><a>Shoes</a></li>
-                <li><a>Accessories</a></li>
-                <li><a>Blogs</a></li>
+                {Auth.isAuthenticated() && <li><Link to="/items" className="is-active">Clothes</Link></li>}
+                {Auth.isAuthenticated() && <li><a>Bags</a></li>}
+                {Auth.isAuthenticated() && <li><a>Shoes</a></li>}
+                {Auth.isAuthenticated() && <li><a>Accessories</a></li>}
+                {Auth.isAuthenticated() && <li><a>Blogs</a></li>}
               </ul>
             </div>
           </nav>

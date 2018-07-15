@@ -5,6 +5,9 @@ const payment = require('../controllers/payment');
 const users = require('../controllers/users');
 const secureRoute = require('../lib/secureRoute');
 
+router.route('/users')
+  .get(users.index);
+
 router.route('/users/:id')
   .get(users.show)
   .put(secureRoute, users.update)

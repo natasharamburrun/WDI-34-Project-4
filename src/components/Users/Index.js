@@ -1,42 +1,43 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import Auth from '../../lib/Auth';
 
-class HomeIndex extends React.Component {
+class UsersIndex extends React.Component {
+
   constructor() {
     super();
     this.state = {
-      items: []
+      users: []
     };
   }
 
   componentDidMount() {
-    axios.get('/api/items')
-      .then(res => this.setState({ items: res.data }));
+    axios.get('/api/users')
+      .then(res => this.setState({ users: res.data }));
   }
+
   render(){
     return(
-      <section className="section-homepage">
+      <section className="section-members">
         <div className="container-content">
           <div className="columns is-multiline">
-            {this.state.items.map(item =>
-              <div key={item._id} className="column is-one-third-desktop is-half-tablet">
-                <Link to={'/register'}>
-                  <div className="card is-3by2">
+            {this.state.users.map(user =>
+              <div key={user._id} className="column is-one-third-desktop is-half-tablet">
+                {Auth.isAuthenticated() && <Link to={`/users/${user._id}`}>
+                  <div className="card">
                     <div className="card-image">
                       <figure className="image">
-                        <img src={item.image} />
+                        <img src={user.image} />
                       </figure>
                     </div>
                     <div className="card-content">
                       <div className="content">
-                        <h2 className="title">{item.designerName}</h2>
-                        <h2 className="title">{item.itemDescription}</h2>
-                        <h2 className="title">Price: {item.price}</h2>
+                        <h2 className="title">{user.username}</h2>
                       </div>
                     </div>
                   </div>
-                </Link>
+                </Link>}
               </div>
             )}
           </div>
@@ -44,7 +45,6 @@ class HomeIndex extends React.Component {
       </section>
     );
   }
-
 }
 
-export default HomeIndex;
+export default UsersIndex;

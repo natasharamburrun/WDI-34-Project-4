@@ -88,6 +88,11 @@ render() {
           {/* ***********ADD FAVOURITE *********** */}
 
           {/* ***********ADD FOR SALE ITEMS *********** */}
+
+
+
+
+
           <div className="media-right">
             {Auth.getPayload().sub === this.state.user._id && <button onClick={this.handleDelete} className="button warning">Delete</button>}
           </div>
