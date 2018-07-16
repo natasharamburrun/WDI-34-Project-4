@@ -9,8 +9,7 @@ class ItemsShow extends React.Component {
     super();
     this.state = {
       data: {
-        author: [],
-        content: []
+        content: ''
       }
     };
   }
@@ -32,8 +31,8 @@ class ItemsShow extends React.Component {
   }
 
   //
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
+  handleSubmit = (e) => {
+    e.preventDefault();
   //   axios({
   //     url: `/api/items/${this.props.match.params.id}/comments`,
   //     method: 'POST',
@@ -42,9 +41,12 @@ class ItemsShow extends React.Component {
   //   })
   //     .then(() => this.props.history.push('/items'));
   //
-  // }
+  }
+  handleChange = ({ target: { name, value }}) => {
+    this.setState({ [name]: value });
+  }
   //
-  createComment() {
+  createComment = () => {
     axios({
       url: `/api/items/${this.props.match.params.id}/comments`,
       method: 'POST',
@@ -56,7 +58,7 @@ class ItemsShow extends React.Component {
 
   }
 
-  deleteComment() {
+  deleteComment = () => {
     axios({
       url: `/api/items/${this.props.match.params.id}/comments/${this.props.comments._id}`,
       method: 'DELETE'
@@ -65,9 +67,6 @@ class ItemsShow extends React.Component {
 
   }
 
-  handleChange = ({ target: { name, value }}) => {
-    this.setState({ [name]: value });
-  }
 
   render() {
     console.log(this.state.item);
@@ -109,17 +108,19 @@ class ItemsShow extends React.Component {
         </figure> */}
             <div  className="media-content">
               <div className="content">
-                <div className="field">
-                  <label className="label">Leave a comment for the seller</label>
-                  <textarea className="input" name="createComment" placeholder="Write a comment"/>
-                  <button className="button success" onClick={() => this.createComment()}>Send</button>
-                </div>
+                <form onSubmit={this.handleSubmit}>
+                  <div className="field">
+                    <label className="label">Leave a comment for the seller</label>
+                    <textarea className="input" name="createComment" placeholder="Write a comment" onChange={this.handleChange}/>
+                  </div>
+                  <button className="button success">Send</button>
+                </form>
               </div>
               <div className="content">
                 <h4 className="title">{this.state.item.comments.author}</h4>
                 <strong>{this.state.item.comments.content}</strong>
               </div>
-              <div onChange={() => this.deleteComment()} className="media-right">
+              <div onChange={this.handleChange} className="media-right">
                 <button className="delete"></button>
               </div>
             </div>
@@ -137,7 +138,6 @@ class ItemsShow extends React.Component {
           <hr />
           <div className="content-detail">
             <h5 className="title">Product description</h5>
-            <h4 className="title">Item: {this.state.item.itemCategory}</h4>
             <h4 className="title">Size: {this.state.item.size}</h4>
             <h4 className="title">rrp: {this.state.item.rrp}</h4>
             <h4 className="title">Condition: {this.state.item.condition}</h4>

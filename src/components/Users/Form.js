@@ -15,6 +15,7 @@ const UsersForm = ({ handleChange, handleSubmit, data }) => {
         {data.errors.image &&<small>{data.errors.image}</small>}
       </div>
 
+
       <div className="field">
         <label className="label">Bio</label>
         <textarea className="textarea" name="bio" placeholder="Bio" onChange={handleChange} value={data.bio || ''}/>

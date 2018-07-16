@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import Auth from '../../lib/Auth';
 
 class HomeIndex extends React.Component {
   constructor() {
@@ -41,7 +42,7 @@ class HomeIndex extends React.Component {
           <div className="columns is-multiline">
             {this.state.items.map(item =>
               <div key={item._id} className="column is-one-quarter-desktop is-half-tablet">
-                <Link to={'/register'}>
+                {!Auth.isAuthenticated() && <Link to={'/login'}>
                   <div className="card is-3by2">
                     <div className="card-image">
                       <figure className="image">
@@ -56,7 +57,7 @@ class HomeIndex extends React.Component {
                       </div>
                     </div>
                   </div>
-                </Link>
+                </Link>}
               </div>
             )}
           </div>

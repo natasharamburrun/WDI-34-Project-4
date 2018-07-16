@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Auth from '../../lib/Auth';
-
+import ReactFilestack from 'filestack-react';
 
 import UsersForm from './form';
 
@@ -9,7 +9,8 @@ class UsersEdit extends React.Component {
 
   state = {
     selectedOptions: [],
-    errors: {}
+    errors: {},
+    user: {}
   };
 
   handleChange = ({ target: { name, value }}) => {
@@ -39,17 +40,39 @@ class UsersEdit extends React.Component {
       .catch(err => this.setState({ errors: err.response.data.errors }));
   }
 
-  handleFilestack = (res) => {
-    this.setState({ filesUploaded: res.filesUploaded[0].url });
+  handleFilestack = result => {
+    const user = { ...this.state.user, image: result.filesUploaded[0].url };
+    this.setState({ user });
   }
 
 
   render() {
     return (
-      <UsersForm
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-        data={this.state}/>
+      <div className="container-content">
+        <div className="media-content-image">
+          <ReactFilestack
+            apikey={'AbEqJmhCVTTmU0EfzPrSoz'}
+            options={{
+              accept: ['image/*'],
+              maxSize: 500 * 500,
+              maxFiles: 1
+            }}
+            onSuccess={this.handleFilestack}
+            render={({ onPick }) => (
+              <div>
+                <button onClick={onPick}>Upload Photo</button>
+                <img src={this.state.filesUploaded} />
+              </div>
+            )}
+          />
+        </div>
+        <div className="media-content-image">
+          <UsersForm
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            data={this.state}/>
+        </div>
+      </div>
     );
   }
 }

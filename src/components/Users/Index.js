@@ -21,12 +21,16 @@ class UsersIndex extends React.Component {
     return(
       <section className="section-members">
         <div className="container-content">
+          <div className="content">
+            <h5 className="title">Welcome to the community</h5>
+            <h5 className="title">Visit members profiles</h5>
+          </div>
           <div className="columns is-multiline">
             {this.state.users.map(user =>
-              <div key={user._id} className="column is-one-third-desktop is-half-tablet">
+              <div key={user._id} className="column is-one-quarter-desktop is-half-tablet">
                 {Auth.isAuthenticated() && <Link to={`/users/${user._id}`}>
                   <div className="card">
-                    <div className="card-image">
+                    <div className="card-image-members">
                       <figure className="image">
                         <img src={user.image} />
                       </figure>

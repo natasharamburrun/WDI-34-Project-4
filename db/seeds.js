@@ -31,6 +31,7 @@ mongoose.connect(dbURI, (err, db) => {
       passwordConfirmation: 'louise'
     }]))
     .then(users => Item.create([{
+      category: 'Clothes',
       itemCategory: 'Dress',
       itemDescription: 'Balenciaga graphic print dress',
       designerName: 'BALENCIAGA',
@@ -45,6 +46,7 @@ mongoose.connect(dbURI, (err, db) => {
       image: 'https://d38r3tbvwkical.cloudfront.net/images/144/picture/144795_1.jpg?c=1528467935',
       user: users[0]
     }, {
+      category: 'Clothes',
       itemCategory: 'Dress',
       itemDescription: 'DOLCE & GABBANA Floral Print Dress',
       designerName: 'DOLCE & GABBANA',
@@ -59,6 +61,7 @@ mongoose.connect(dbURI, (err, db) => {
       image: 'https://d38r3tbvwkical.cloudfront.net/images/144/picture/144040_1.jpg?c=1527840269',
       user: users[1]
     }, {
+      category: 'Clothes',
       itemCategory: 'Dress',
       itemDescription: 'Bottega Veneta Red fit & flare Dress',
       designerName: 'BOTTEGA VENETA',
@@ -73,6 +76,7 @@ mongoose.connect(dbURI, (err, db) => {
       image: 'https://d38r3tbvwkical.cloudfront.net/images/119/picture/119820_1.jpg?c=1529852233',
       user: users[2]
     }, {
+      category: 'Clothes',
       itemCategory: 'Dress',
       itemDescription: 'Ralph Lauren red dress',
       designerName: 'RALPH LAUREN',

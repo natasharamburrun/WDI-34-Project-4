@@ -7,4 +7,4 @@ const paymentSchema = new mongoose.Schema({
   zip: {type: 'Number'}
 });
 
-module.exports = mongoose.model('payment', paymentSchema);
+module.exports = mongoose.model('Payment', paymentSchema);

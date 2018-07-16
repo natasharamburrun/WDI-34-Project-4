@@ -6,6 +6,7 @@ const commentSchema = new mongoose.Schema({
 });
 
 const itemSchema = new mongoose.Schema({
+  category: String,
   itemCategory: {type: String, required: 'This field is required'},
   itemDescription: {type: String, required: 'This field is required'},
   designerName: {type: String, required: 'This field is required'},
@@ -27,4 +28,4 @@ itemSchema.set('toJSON', {
   virtuals: true
 });
 
-module.exports = mongoose.model('items', itemSchema);
+module.exports = mongoose.model('Item', itemSchema);

@@ -5,6 +5,11 @@ const ItemsForm = ({ handleChange, handleSubmit, data }) => {
 
     <form onSubmit={handleSubmit}>
       <div className="field">
+        <label className="label">Category</label>
+        <input className="input" name="category" placeholder="Category" onChange={handleChange} value={data.category || ''}/>
+      </div>
+
+      <div className="field">
         <label className="label">Item Category</label>
         <input className="input" name="itemCategory" placeholder="itemCategory" onChange={handleChange} value={data.itemCategory || ''}/>
       </div>

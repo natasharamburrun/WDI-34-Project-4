@@ -9,11 +9,7 @@ import {CardElement, injectStripe} from 'react-stripe-elements';
 
 class CheckoutForm extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {complete: false};
-    this.submit = this.submit.bind(this);
-  }
+  state = { complete: false };
 
   //Create a token to securely transmit card information
 
@@ -29,17 +25,13 @@ class CheckoutForm extends React.Component {
             ...token,
             amount: this.props.amount * 100
           }
-          // headers: { 'Content-Type': 'text/plain' }
         })
-          .then(res => console.log(res.data));
-
-        // .then(res => this.setState ({ charge: res.data})
-
+          .then(() => this.setState({ complete: true }));
       });
   }
 
   render() {
-    // if(this.setState({complete: true})) return <h2 className="title is-2">Purchase Complete</h2>;
+    if(this.state.complete) return <h2 className="title is-2">Purchase Complete</h2>;
 
     return (
       <div className="checkout">

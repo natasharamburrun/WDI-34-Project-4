@@ -13,10 +13,10 @@ const userSchema = new mongoose.Schema({
   //this dont make an ID virtual
 });
 
-userSchema.virtual('owners', {
+userSchema.virtual('items', {
   localField: '_id',
   foreignField: 'user',
-  Ref: 'Item'
+  ref: 'Item'
 });
 
 userSchema.set('toJSON', {
@@ -26,6 +26,7 @@ userSchema.set('toJSON', {
     return json;
   }
 });
+
 userSchema.plugin(uniqueValidator);
 
 userSchema.virtual('passwordConfirmation')
