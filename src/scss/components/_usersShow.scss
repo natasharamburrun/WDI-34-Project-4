@@ -2,41 +2,49 @@
   font-family: 'Gilda Display', serif;
 }
 
-.media-content h4 {
-  font-family: 'Gilda Display', serif;
-  font-size: 15px;
+// .media-content h4 {
+//   font-family: 'Gilda Display', serif;
+//   font-size: 15px;
+//   max-width: 800px;
+//
+// }
 
-}
+// .section .user-show {
+//
 
-.section .user-show {
-  margin-right: -50px;
-  margin-left: -50px;
-  // display: inline-flex;
-  // margin-left: 40%;
-  padding: 10px;
-  max-width: 800px;
+// }
 
-}
-
-.media-content h4.title {
+.content-info h4 {
   margin-bottom: 10px;
   margin-top: 10px;
+  text-align: center;
+}
+.media-profileinfo {
+  border: 1px #dfdfdf solid;
+  text-align: center;
 }
 
 .media-content-image img  {
-  max-height: 128px;
-  max-width: 128px;
+  margin-left: 40%;
+  margin-top: 5%;
+  text-align: center;
+  max-height: 256px;
+  max-width: 256px;
   border-radius: 50%;
+  border: 1px #dfdfdf 1px solid;
 }
 
-.media-right button {
-  margin-left: 0px;
-}
-.card-image-members {
-  max-width: 200px;
-  max-height: 200px;
-}
-//
-// .section {
-//   background-color: white;
+// .media-right button {
+//   margin-left: 0px;
+// }
+// .card-image-members {
+//   max-width: 200px;
+//   max-height: 200px;
+// }
+
+
+// .content figure img {
+//   min-width: 185px;
+//   min-height: 185px;
+//   border: red 1px solid;
 // }
