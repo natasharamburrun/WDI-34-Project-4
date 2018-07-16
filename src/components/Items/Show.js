@@ -20,6 +20,9 @@ class ItemsShow extends React.Component {
       .catch(err => this.setState({ error: err.message }));
   }
 
+  handleToggle = () => {
+    this.setState({ deletePressed: !this.state.deletePressed });
+  }
 
   handleDelete = () => {
     axios({
@@ -46,18 +49,6 @@ class ItemsShow extends React.Component {
     this.setState({ [name]: value });
   }
 
-  // createComment = () => {
-  //   axios({
-  //     url: `/api/items/${this.props.match.params.id}/comments`,
-  //     method: 'POST',
-  //     data: this.state,
-  //     headers: { Authorization: `Bearer ${Auth.getToken()}` }
-  //   })
-  //     .then(() => this.props.history.push('/items'))
-  //     .then(res => this.setState({ item: res.data }));
-  //
-  // }
-
   deleteComment = (id) => {
     axios({
       url: `/api/items/${this.props.match.params.id}/comments/${id}`,
@@ -74,7 +65,6 @@ class ItemsShow extends React.Component {
     if(!this.state.item) return <h2 className="title is-2">Loading...</h2>;
     return (
       <div className="columns">
-
         {/* Items picture */}
         <div className="column is-half">
           <figure className="image is-square">
@@ -116,7 +106,6 @@ class ItemsShow extends React.Component {
                   <button className="button success">Send</button>
                 </form>
               </div>
-
               <div className="content">
                 {this.state.item.comments.map((comment) =>
                   <div key={comment._id}>
@@ -155,14 +144,25 @@ class ItemsShow extends React.Component {
             <h5 className="title is-5">Delivery</h5>
             <h4 className="title">{this.state.item.shipping}</h4>
             <hr />
-
           </div>
-          <div className="content-admin">
-
-            {Auth.getPayload().sub === this.state.item.user._id && <Link to={`/items/${this.state.item._id}/edit`} className="button info">Edit</Link>}
-
-            {Auth.getPayload().sub === this.state.item.user._id && <button onClick={this.handleDelete} className="button warning">Delete</button>}
-          </div>
+          {/* Delete sale */}
+          <article className="admin">
+            <div className="deleteitem">
+              {!this.state.deletePressed ? (
+                <div className="content">
+                  {Auth.getPayload().sub === this.state.item.user._id && <Link to={`/items/${this.state.item._id}/edit`}>Edit sale</Link>}
+                  <br />
+                  {Auth.getPayload().sub === this.state.item.user._id && <button onClick={this.handleToggle}>Cancel Sale</button>}
+                </div>
+              ) : (
+                <div className="del">
+                  <button onClick={this.handleDelete} className="button">Confirm</button>
+                  {' '}
+                  <button onClick={this.handleToggle} className="button">Cancel</button>
+                </div>
+              )}
+            </div>
+          </article>
         </div>
       </div>
     );

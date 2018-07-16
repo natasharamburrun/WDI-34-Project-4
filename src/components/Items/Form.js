@@ -1,6 +1,7 @@
 import React from 'react';
+import ReactFilestack from 'filestack-react';
 
-const ItemsForm = ({ handleChange, handleSubmit, data }) => {
+const ItemsForm = ({ handleChange, handleSubmit, handleFilestack, data }) => {
   return(
 
     <form onSubmit={handleSubmit}>
@@ -52,6 +53,26 @@ const ItemsForm = ({ handleChange, handleSubmit, data }) => {
       <div className="field">
         <label className="label">Colour</label>
         <input className="input" name="colour" placeholder="colour" onChange={handleChange} value={data.colour || ''}/>
+      </div>
+
+      <div className="field">
+        <label className="label">Picture</label>
+        <ReactFilestack
+          apikey={'AbEqJmhCVTTmU0EfzPrSoz'}
+          options={{
+            accept: ['image/*'],
+            maxSize: 500 * 500,
+            maxFiles: 5
+          }}
+          onSuccess={handleFilestack}
+          render={({ onPick }) => (
+            <div>
+              <button onClick={onPick}>Upload Pictures</button>
+              {/* <img src={data.items.image} /> */}
+            </div>
+          )}
+        />
+        {data.errors.image &&<small>{data.errors.image}</small>}
       </div>
 
       <div className="field">

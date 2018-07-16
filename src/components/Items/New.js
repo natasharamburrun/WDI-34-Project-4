@@ -6,7 +6,8 @@ import Auth from '../../lib/Auth';
 class ItemsNew extends React.Component {
 
   state = {
-    errors: {}
+    errors: {},
+    images: {}
   };
 
   componentDidMount() {
@@ -26,6 +27,11 @@ class ItemsNew extends React.Component {
 
   handleChange = ({ target: { name, value }}) => {
     this.setState({ [name]: value });
+  }
+
+  handleFilestack = result => {
+    const item = { ...this.state.item, image: result.filesUploaded[0].url };
+    this.setState({ item });
   }
 
   handleSubmit = (e) => {
@@ -48,6 +54,7 @@ class ItemsNew extends React.Component {
           <h3 className="title">Boost your shopping budget and re-claim space in your wardrobe by selling your designer pieces</h3>
           <img src= 'https://i.imgur.com/WRsRDLd.png?1'/>
           <ItemsForm
+            handleFilestack={this.handleFilestack}
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
             data={this.state}

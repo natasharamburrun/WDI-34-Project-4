@@ -31,7 +31,7 @@ class UsersShow extends React.Component {
       .then(() => Flash.setMessage('success', 'Profile successfully deleted'))
       .then(() => this.props.history.push('/'));
   }
-  
+
   render() {
     if(this.state.error) return <h2 className="title is-2">{this.state.error}</h2>;
     if(!this.state.user) return <h2 className="title is-2">Loading...</h2>;
@@ -88,6 +88,7 @@ class UsersShow extends React.Component {
               </div>
             ) : (
               <div className="delete">
+                <p>Are you sure?</p>
                 <button onClick={this.handleDelete} className="button">Confirm</button>
                 {' '}
                 <button onClick={this.handleToggle} className="button">Cancel</button>

@@ -7,6 +7,16 @@ class Header extends React.Component {
     navbarOpen: false
   }
 
+  toggleNavbar = () => {
+    this.setState({ navbarOpen: !this.state.navbarOpen });
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps.location.pathname !== this.props.location.pathname) {
+      this.setState({ navbarOpen: false });
+    }
+  }
+
   logout = () => {
     Auth.logout();
     this.props.history.push('/');
