@@ -44,7 +44,6 @@ class UsersShow extends React.Component {
             <div className="content-info">
               <h4 className="title"><strong>{this.state.user.username}</strong></h4>
               <h4 className="title">{this.state.user.bio}</h4>
-              {Auth.getPayload().sub === this.state.user._id && <button onClick={this.handleDelete}  className="button">Delete Profile</button>}
             </div>
           </div>
         </article>
@@ -54,7 +53,7 @@ class UsersShow extends React.Component {
           <div className="columns">
             <div className="column is-one-third-desktop is-half-tablet">
               <div className="content">
-                <p>Items for sale</p>
+                <h4 className="title">Items for sale</h4>
                 <figure className="image">
                   {this.state.user.items && this.state.user.items.map((item) =>
                     <div key={item._id}>
@@ -71,6 +70,14 @@ class UsersShow extends React.Component {
             </div>
           </div>
         </article>
+        <hr />
+        <article className="admin-deleteprofile">
+          {/* Items picture */}
+          <div className="content">
+            {Auth.getPayload().sub === this.state.user._id && <button onClick={this.handleDelete}  className="button">Delete Profile</button>}
+          </div>
+        </article>
+
       </section>
     );
   }

@@ -5,6 +5,13 @@ form {
   height:100%;
   margin:
   0 auto;
+  img {
+    margin-left: 23%;
+    max-height: 256px;
+    max-width: 256px;
+    border-radius: 50%;
+    border: 1px #dfdfdf 1px solid;
+  }
 }
 
 .container-join form {
