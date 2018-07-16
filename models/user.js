@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   image: { type: String, default: 'https://thumbs.dreamstime.com/b/cute-vector-girl-avatar-icon-young-woman-face-pretty-lady-port-portrait-cartoon-illustration-beautiful-brunette-76317393.jpg'},
-  bio: { type: String, default: 'Tell us about you!' }
+  bio: { type: String, default: 'Tell us about youself!' }
 }, {
   id: false
   //this dont make an ID virtual

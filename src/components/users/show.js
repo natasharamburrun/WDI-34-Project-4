@@ -2,11 +2,13 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Auth from '../../lib/Auth';
+import Flash from '../../lib/Flash';
 
 class UsersShow extends React.Component {
 
     state = {
-      user: {}
+      user: {},
+      deletePressed: false
     };
 
     componentDidMount(){
@@ -16,16 +18,20 @@ class UsersShow extends React.Component {
         .catch(err => this.setState({ error: err.message }));
     }
 
+    handleToggle = () => {
+      this.setState({ deletePressed: !this.state.deletePressed });
+    }
+
   handleDelete = () => {
     axios({
       url: `/api/users/${this.props.match.params.id}`,
       method: 'DELETE',
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(() => this.props.history.push('/users'));
+      .then(() => Flash.setMessage('success', 'Profile successfully deleted'))
+      .then(() => this.props.history.push('/'));
   }
-
-
+  
   render() {
     if(this.state.error) return <h2 className="title is-2">{this.state.error}</h2>;
     if(!this.state.user) return <h2 className="title is-2">Loading...</h2>;
@@ -48,8 +54,8 @@ class UsersShow extends React.Component {
           </div>
         </article>
         <hr />
+        {/* Items picture */}
         <article className="container-profileforsale">
-          {/* Items picture */}
           <div className="columns">
             <div className="column is-one-third-desktop is-half-tablet">
               <div className="content">
@@ -73,13 +79,22 @@ class UsersShow extends React.Component {
           </div>
         </article>
         <hr />
+        {/* Delete Profile */}
         <article className="admin-deleteprofile">
-          {/* Items picture */}
-          <div className="content">
-            {Auth.getPayload().sub === this.state.user._id && <button onClick={this.handleDelete}  className="button">Delete Profile</button>}
+          <div className="deleteprofile">
+            {!this.state.deletePressed ? (
+              <div className="content">
+                {Auth.getPayload().sub === this.state.user._id && <button onClick={this.handleToggle} className="button warning">Delete Profile</button>}
+              </div>
+            ) : (
+              <div className="delete">
+                <button onClick={this.handleDelete} className="button">Confirm</button>
+                {' '}
+                <button onClick={this.handleToggle} className="button">Cancel</button>
+              </div>
+            )}
           </div>
         </article>
-
       </section>
     );
   }
