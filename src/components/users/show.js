@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Auth from '../../lib/Auth';
 
 class UsersShow extends React.Component {
@@ -57,7 +57,9 @@ class UsersShow extends React.Component {
                 <figure className="image">
                   {this.state.user.items && this.state.user.items.map((item) =>
                     <div key={item._id}>
-                      <img src={item.image} />
+                      <Link to={`/items/${item._id}`}>
+                        <img src={item.image} />
+                      </Link>
                     </div>
                   )}
                 </figure>

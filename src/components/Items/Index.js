@@ -88,7 +88,7 @@ class ItemsIndex extends React.Component {
                       </div>
                     </div>
                   </div>
-
+    
                 </Link>
 
               </div>

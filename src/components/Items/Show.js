@@ -106,7 +106,7 @@ class ItemsShow extends React.Component {
                 <img src={this.state.item.comments.image} />
               </p>
             </figure> */}
-            <div className="media-content">
+            <div className="media-content-comments">
               <div className="content">
                 <form onSubmit={this.handleSubmit}>
                   <div className="field">
