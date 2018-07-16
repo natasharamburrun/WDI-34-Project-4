@@ -26,16 +26,6 @@ class UsersShow extends React.Component {
       .then(() => this.props.history.push('/users'));
   }
 
-  // handleFilestack = (res) => {
-  //   const user = { ...this.state.user, image: res.filesUploaded[0].url };
-  //   this.setState({ user });
-  // }
-
-  // handleFilestack = result => {
-  //   const user = { ...this.state.user, image: result.filesUploaded[0].url };
-  //   this.setState({ user });
-  // }
-
 
   render() {
     if(this.state.error) return <h2 className="title is-2">{this.state.error}</h2>;
@@ -48,23 +38,6 @@ class UsersShow extends React.Component {
           </p>
         </figure>
 
-        {/* <figure className="media-content-image">
-        <ReactFilestack
-          apikey={'AbEqJmhCVTTmU0EfzPrSoz'}
-          options={{
-            accept: ['image/*'],
-            maxSize: 500 * 500,
-            maxFiles: 1
-          }}
-          onSuccess={this.handleFilestack}
-          render={({ onPick }) => (
-            <div>
-              <img src={this.state.filesUploaded} />
-              <button onClick={onPick}>Upload Photo</button>
-            </div>
-          )}
-        />
-      </figure> */}
         <article className="media">
           <div className="media-content">
             <div className="content">
@@ -76,15 +49,21 @@ class UsersShow extends React.Component {
               {/* ***********ADD FOR SALE ITEMS *********** */}
               {/* Items picture */}
               <div className="column is-multiline">
-                <figure className="image is-square">
-                  {/* <img src={this.state.user.item.image} /> */}
-                </figure>
+                <div className="content">
+                  <figure className="image is-square">
+                    {this.state.user.items && this.state.user.items.map((item) =>
+                      <div key={item._id}>
+                        <img src={item.image} />
+                      </div>
+                    )}
+                  </figure>
+                </div>
+
+                {/* ***********ADD FOLLOWS ************* */}
+
+                {/* ***********ADD FAVOURITE *********** */}
+
               </div>
-
-              {/* ***********ADD FOLLOWS ************* */}
-
-              {/* ***********ADD FAVOURITE *********** */}
-
             </div>
           </div>
         </article>

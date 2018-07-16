@@ -15,11 +15,11 @@ class ItemsNew extends React.Component {
       method: 'GET'
     })
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         const options = res.data.map(item => {
           return { value: item._id, label: item.name };
         });
-        console.log(options);
+        // console.log(options);
         this.setState({ options });
       });
   }

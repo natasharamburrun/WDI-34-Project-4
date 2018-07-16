@@ -31,12 +31,6 @@ const UsersForm = ({ handleChange, handleSubmit, handleFilestack, data }) => {
       </div>
 
       <div className="field">
-        <label className="label">Image</label>
-        <input className="input" name="image" placeholder="Image" onChange={handleChange} value={data.user.image || ''}/>
-        {data.errors.image &&<small>{data.errors.image}</small>}
-      </div>
-
-      <div className="field">
         <label className="label">Bio</label>
         <textarea className="textarea" name="bio" placeholder="Bio" onChange={handleChange} value={data.user.bio || ''}/>
         {data.errors.bio &&<small>{data.errors.bio}</small>}

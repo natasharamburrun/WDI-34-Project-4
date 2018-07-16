@@ -23,7 +23,7 @@ router.route('/items/:id/')
   .delete(secureRoute, items.delete);
 
 router.post('/items/:id/comments', items.commentCreate);
-router.delete('/items/:id/comments/:commentsId', items.commentDelete);
+router.delete('/items/:id/comments/:commentId', items.commentDelete);
 
 
 router.post('/register', auth.register);
@@ -33,3 +33,4 @@ router.post('/charge', payment.create);
 
 
 module.exports = router;
+  

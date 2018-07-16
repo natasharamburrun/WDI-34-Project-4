@@ -58,12 +58,12 @@ class ItemsShow extends React.Component {
   //
   // }
 
-  deleteComment = () => {
+  deleteComment = (id) => {
     axios({
-      url: `/api/items/${this.props.match.params.id}/comments/${this.props.comments._id}`,
+      url: `/api/items/${this.props.match.params.id}/comments/${id}`,
       method: 'DELETE'
     })
-      .then(() => this.props.history.push('/items'));
+      .then(res => this.setState({ item: res.data }));
 
   }
 
@@ -102,10 +102,10 @@ class ItemsShow extends React.Component {
           {/* comments */}
           <article className="media">
             {/* <figure className="media-left">
-            <p className="image is-64x64">
-            <img src={this.state.item.comments.image} />
-          </p>
-        </figure> */}
+              <p className="image is-64x64">
+                <img src={this.state.item.comments.image} />
+              </p>
+            </figure> */}
             <div className="media-content">
               <div className="content">
                 <form onSubmit={this.handleSubmit}>
@@ -118,17 +118,17 @@ class ItemsShow extends React.Component {
               </div>
 
               <div className="content">
-                <h4 className="title">{this.state.item.comments.author}</h4>
                 {this.state.item.comments.map((comment) =>
                   <div key={comment._id}>
+                    {comment.author}
                     {comment.content}
+                    <div className="media-right">
+                      <button onClick={() => this.deleteComment(comment._id)} className="delete"></button>
+                    </div>
                   </div>
                 )}
               </div>
 
-              <div onChange={this.handleChange} className="media-right">
-                <button className="delete"></button>
-              </div>
             </div>
           </article>
         </div>

@@ -48,23 +48,6 @@ class UsersEdit extends React.Component {
   render() {
     return (
       <div className="container-content">
-        {/* <div className="media-content-image">
-          <ReactFilestack
-            apikey={'AbEqJmhCVTTmU0EfzPrSoz'}
-            options={{
-              accept: ['image/*'],
-              maxSize: 500 * 500,
-              maxFiles: 1
-            }}
-            onSuccess={this.handleFilestack}
-            render={({ onPick }) => (
-              <div>
-                <button onClick={onPick}>Upload Photo</button>
-                <img src={this.state.filesUploaded} />
-              </div>
-            )}
-          />
-        </div> */}
         <div className="media-content-image">
           <UsersForm
             handleFilestack={this.handleFilestack}
