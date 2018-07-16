@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import Auth from '../../lib/Auth';
-import ReactFilestack from 'filestack-react';
 
 import UsersForm from './form';
 
@@ -14,7 +13,8 @@ class UsersEdit extends React.Component {
   };
 
   handleChange = ({ target: { name, value }}) => {
-    this.setState({ [name]: value });
+    const user = { ...this.state.user, [name]: value };
+    this.setState({ user });
   }
 
   componentDidMount() {
@@ -23,8 +23,7 @@ class UsersEdit extends React.Component {
       method: 'GET'
     })
       .then(res => {
-
-        this.setState(res.data);
+        this.setState({ user: res.data });
       });
   }
 
@@ -33,7 +32,7 @@ class UsersEdit extends React.Component {
     axios({
       url: `/api/users/${this.props.match.params.id}`,
       method: 'PUT',
-      data: this.state,
+      data: this.state.user,
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
       .then(() => this.props.history.push(`/users/${this.props.match.params.id}`))
@@ -49,7 +48,7 @@ class UsersEdit extends React.Component {
   render() {
     return (
       <div className="container-content">
-        <div className="media-content-image">
+        {/* <div className="media-content-image">
           <ReactFilestack
             apikey={'AbEqJmhCVTTmU0EfzPrSoz'}
             options={{
@@ -65,9 +64,10 @@ class UsersEdit extends React.Component {
               </div>
             )}
           />
-        </div>
+        </div> */}
         <div className="media-content-image">
           <UsersForm
+            handleFilestack={this.handleFilestack}
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
             data={this.state}/>

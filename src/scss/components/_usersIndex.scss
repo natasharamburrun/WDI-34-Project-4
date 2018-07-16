@@ -2,13 +2,10 @@
   background-color: #efefef;
   .card-content {
     max-height: 100px;
-    // .content h5 {
-    //   font-size: 20px;
-    //   text-align: center;
-    // }
   }
 }
 
+//headline text
 .section-members .content h5 {
   font-size: 20px;
   text-align: center;
@@ -17,15 +14,15 @@
   border-radius: 50%;
   max-width: 200px;
   max-height: 200px;
-  .card {
-    // background-color: #EDEFF0;
-    // padding-bottom: 20px;
-  }
 }
 //
-.card-image-members .card {
+.card-image-members {
   // max-width: 225px;
   // max-height: 200px;
-  // background-color: #EDEFF0;
+  background-color: #EDEFF0;
   // padding-bottom: 20px;
+}
+
+.section-members .column.is-one-quarter-desktop {
+  text-align: center;
 }

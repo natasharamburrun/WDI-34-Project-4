@@ -13,7 +13,7 @@ class UsersShow extends React.Component {
     componentDidMount(){
 
       axios.get(`/api/users/${this.props.match.params.id}`)
-        .then(res => this.setState({ user: res.data }))
+        .then(res => this.setState({ user: res.data }, () => console.log(this.state)))
         .catch(err => this.setState({ error: err.message }));
     }
 
@@ -44,7 +44,7 @@ class UsersShow extends React.Component {
       <section className="user-show">
         <figure className="media-content-image">
           <p className="image is-128x128">
-            <img src={this.state.filesUploaded} />
+            <img src={this.state.user.image} />
           </p>
         </figure>
 
@@ -75,11 +75,11 @@ class UsersShow extends React.Component {
             <div className="container-bottom">
               {/* ***********ADD FOR SALE ITEMS *********** */}
               {/* Items picture */}
-              {/* <div className="column is-multiline">
+              <div className="column is-multiline">
                 <figure className="image is-square">
-                  <img src={this.state.user.item.image} />
+                  {/* <img src={this.state.user.item.image} /> */}
                 </figure>
-              </div> */}
+              </div>
 
               {/* ***********ADD FOLLOWS ************* */}
 

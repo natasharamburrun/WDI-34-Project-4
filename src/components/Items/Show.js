@@ -30,33 +30,33 @@ class ItemsShow extends React.Component {
       .then(() => this.props.history.push('/items'));
   }
 
-  //
+
   handleSubmit = (e) => {
     e.preventDefault();
-  //   axios({
-  //     url: `/api/items/${this.props.match.params.id}/comments`,
-  //     method: 'POST',
-  //     data: this.state,
-  //     headers: { Authorization: `Bearer ${Auth.getToken()}` }
-  //   })
-  //     .then(() => this.props.history.push('/items'));
-  //
-  }
-  handleChange = ({ target: { name, value }}) => {
-    this.setState({ [name]: value });
-  }
-  //
-  createComment = () => {
     axios({
       url: `/api/items/${this.props.match.params.id}/comments`,
       method: 'POST',
       data: this.state,
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      .then(() => this.props.history.push('/items'))
-      .then(res => this.setState({ item: res.data }));
-
+      .then(() => this.props.history.replace(`/items/${this.props.match.params.id}`));
   }
+
+  handleChange = ({ target: { name, value }}) => {
+    this.setState({ [name]: value });
+  }
+
+  // createComment = () => {
+  //   axios({
+  //     url: `/api/items/${this.props.match.params.id}/comments`,
+  //     method: 'POST',
+  //     data: this.state,
+  //     headers: { Authorization: `Bearer ${Auth.getToken()}` }
+  //   })
+  //     .then(() => this.props.history.push('/items'))
+  //     .then(res => this.setState({ item: res.data }));
+  //
+  // }
 
   deleteComment = () => {
     axios({
@@ -69,7 +69,7 @@ class ItemsShow extends React.Component {
 
 
   render() {
-    console.log(this.state.item);
+    console.log('item', this.state.item);
     if(this.state.error) return <h2 className="title is-2">{this.state.error}</h2>;
     if(!this.state.item) return <h2 className="title is-2">Loading...</h2>;
     return (
@@ -106,20 +106,26 @@ class ItemsShow extends React.Component {
             <img src={this.state.item.comments.image} />
           </p>
         </figure> */}
-            <div  className="media-content">
+            <div className="media-content">
               <div className="content">
                 <form onSubmit={this.handleSubmit}>
                   <div className="field">
                     <label className="label">Leave a comment for the seller</label>
-                    <textarea className="input" name="createComment" placeholder="Write a comment" onChange={this.handleChange}/>
+                    <textarea className="textarea" name="content" placeholder="Write a comment" onChange={this.handleChange}/>
                   </div>
                   <button className="button success">Send</button>
                 </form>
               </div>
+
               <div className="content">
                 <h4 className="title">{this.state.item.comments.author}</h4>
-                <strong>{this.state.item.comments.content}</strong>
+                {this.state.item.comments.map((comment) =>
+                  <div key={comment._id}>
+                    {comment.content}
+                  </div>
+                )}
               </div>
+
               <div onChange={this.handleChange} className="media-right">
                 <button className="delete"></button>
               </div>

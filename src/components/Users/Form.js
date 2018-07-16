@@ -1,24 +1,44 @@
 import React from 'react';
+import ReactFilestack from 'filestack-react';
 
-const UsersForm = ({ handleChange, handleSubmit, data }) => {
+const UsersForm = ({ handleChange, handleSubmit, handleFilestack, data }) => {
   return(
     <form onSubmit={handleSubmit}>
       <div className="field">
         <label className="label">Username</label>
-        <input className="input" name="username" placeholder="Username" onChange={handleChange} value={data.username || ''}/>
+        <input className="input" name="username" placeholder="Username" onChange={handleChange} value={data.user.username || ''}/>
         {data.errors.username &&<small>{data.errors.username}</small>}
       </div>
 
       <div className="field">
         <label className="label">Image</label>
-        <input className="input" name="image" placeholder="Image" onChange={handleChange} value={data.image || ''}/>
+        <ReactFilestack
+          apikey={'AbEqJmhCVTTmU0EfzPrSoz'}
+          options={{
+            accept: ['image/*'],
+            maxSize: 500 * 500,
+            maxFiles: 1
+          }}
+          onSuccess={handleFilestack}
+          render={({ onPick }) => (
+            <div>
+              <button onClick={onPick}>Upload Photo</button>
+              <img src={data.user.image} />
+            </div>
+          )}
+        />
         {data.errors.image &&<small>{data.errors.image}</small>}
       </div>
 
+      <div className="field">
+        <label className="label">Image</label>
+        <input className="input" name="image" placeholder="Image" onChange={handleChange} value={data.user.image || ''}/>
+        {data.errors.image &&<small>{data.errors.image}</small>}
+      </div>
 
       <div className="field">
         <label className="label">Bio</label>
-        <textarea className="textarea" name="bio" placeholder="Bio" onChange={handleChange} value={data.bio || ''}/>
+        <textarea className="textarea" name="bio" placeholder="Bio" onChange={handleChange} value={data.user.bio || ''}/>
         {data.errors.bio &&<small>{data.errors.bio}</small>}
       </div>
 

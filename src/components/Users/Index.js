@@ -29,16 +29,12 @@ class UsersIndex extends React.Component {
             {this.state.users.map(user =>
               <div key={user._id} className="column is-one-quarter-desktop is-half-tablet">
                 {Auth.isAuthenticated() && <Link to={`/users/${user._id}`}>
-                  <div className="card">
-                    <div className="card-image-members">
-                      <figure className="image">
-                        <img src={user.image} />
-                      </figure>
-                    </div>
-                    <div className="card-content">
-                      <div className="content">
-                        <h2 className="title">{user.username}</h2>
-                      </div>
+                  <div className="card-image-members">
+                    <figure className="image">
+                      <img src={user.image} />
+                    </figure>
+                    <div className="content">
+                      <h2 className="title">{user.username}</h2>
                     </div>
                   </div>
                 </Link>}
