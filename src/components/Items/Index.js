@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import _ from 'lodash';
+// import _ from 'lodash';
 
 
 class ItemsIndex extends React.Component {
@@ -15,6 +15,8 @@ class ItemsIndex extends React.Component {
     };
   }
 
+
+  //if there is a category then this will setstate to match cat
   componentDidUpdate() {
     if(this.state.category !== this.props.match.params.category) {
       this.setState({ category: this.props.match.params.category });
@@ -25,16 +27,17 @@ class ItemsIndex extends React.Component {
     axios.get('/api/items')
       .then(res => this.setState({ items: res.data }));
   }
-
+  //function which allows you to search by the designer name
   handleSearch = (e) => {
     this.setState({ search: e.target.value });
   }
-
+  //filter the items on the pages by designerName
   filteredItems = (items) => {
     const re = new RegExp(this.state.search, 'i');
     return items.filter(item => re.test(item.designerName));
   }
 
+  //filters the category into tabs in the header
   filterByCategory = (items) => {
     return this.state.category ? items.filter(item => item.category === this.state.category) : items;
   }
@@ -45,7 +48,6 @@ class ItemsIndex extends React.Component {
   }
 
   render(){
-    // this.filterByCategory();
     return(
       <section className="section-fullpage">
         <div className="container-search">
@@ -55,16 +57,13 @@ class ItemsIndex extends React.Component {
           <div className="columns is-multiline">
             {this.sortedAndFilteredItems().map(item =>
               <div key={item._id} className="column is-one-quarter-desktop is-half-tablet">
-
                 <Link to={`/items/${item._id}`}>
-
                   <div className="card">
                     <div className="card-image">
                       <figure className="image">
                         <img src={item.image} />
                       </figure>
                     </div>
-
                     <div className="card-content">
                       <div className="content">
                         <h2 className="title name">{item.designerName}</h2>
@@ -77,9 +76,7 @@ class ItemsIndex extends React.Component {
                       </div>
                     </div>
                   </div>
-
                 </Link>
-
               </div>
             )}
           </div>
@@ -87,7 +84,6 @@ class ItemsIndex extends React.Component {
       </section>
     );
   }
-
 }
 
 export default ItemsIndex;

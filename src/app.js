@@ -8,7 +8,7 @@ import UsersIndex from './components/Users/Index';
 import UsersShow from './components/Users/Show';
 import UsersEdit from './components/Users/Edit';
 import ItemsIndex from './components/Items/Index';
-import ItemsBags from './components/Items/bags';
+// import ItemsBags from './components/Items/bags';
 import ItemsShow from './components/Items/Show';
 import ItemsNew from './components/Items/New';
 import ItemsEdit from './components/Items/Edit';

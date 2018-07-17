@@ -31,7 +31,6 @@ class Header extends React.Component {
               <Link to="/" className="navbar-item">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sheOO-Hc2fYdmjp84I9f3vFtPf4zKni4d2Ed5QfE_litEH-3" height="50" />
               </Link>
-
               <a role="button"
                 className={`navbar-burger${this.state.navbarOpen ? ' is-active' : ''}`}
                 aria-label="menu"
@@ -43,7 +42,6 @@ class Header extends React.Component {
                 <span aria-hidden="true"></span>
               </a>
             </div>
-
             <div className={`navbar-menu${this.state.navbarOpen ? ' is-active' : ''}`}>
               <div className="navbar-start">
                 <Link to="/about" className="navbar-item">About</Link>
@@ -64,8 +62,6 @@ class Header extends React.Component {
             </div>
           </nav>
         </div>
-
-
         {/* Hero content: will be in the middle  */}
         <div className="hero-body">
           <div className="container has-text-centered">
@@ -74,7 +70,6 @@ class Header extends React.Component {
             </h1>
           </div>
         </div>
-
         {/* Hero footer: will stick at the bottom */}
         <div className="hero-foot">
           <nav className="tabs is-boxed is-fullwidth">

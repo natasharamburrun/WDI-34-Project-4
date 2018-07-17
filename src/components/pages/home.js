@@ -20,6 +20,7 @@ class HomeIndex extends React.Component {
       <section className="section-homepage">
         <div className="card-content-about">
           <div className="content-font">
+            < hr/>
             <h3 className="title">Welcome to Designer Marketplace</h3>
             <h3 className="title">The online marketplace to BUY and SELL Luxury Pre-Owned Fashion. </h3>
             <h3 className="title">Please join our community and sign in to view and purchase items. </h3>
@@ -38,6 +39,7 @@ class HomeIndex extends React.Component {
             <h3 className="title"></h3>
           </div>
         </div>
+        < hr/>
         <div className="container-content-homepage">
           <div className="columns is-multiline">
             {this.state.items.map(item =>
