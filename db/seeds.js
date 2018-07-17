@@ -10,25 +10,45 @@ mongoose.connect(dbURI, (err, db) => {
 
   db.dropDatabase()
     .then(() => User.create([{
-      username: 'maria',
+      username: 'Rachel',
+      email: 'rachel@rachel.com',
+      password: 'rachel',
+      passwordConfirmation: 'rachel'
+    }, {
+      username: 'Linda',
+      email: 'linda@linda.com',
+      password: 'linda',
+      passwordConfirmation: 'linda'
+    }, {
+      username: 'Bella',
+      email: 'bella@bella.com',
+      password: 'bella',
+      passwordConfirmation: 'bella'
+    } , {
+      username: 'Bianca',
+      email: 'bianca@bianca.com',
+      password: 'bianca',
+      passwordConfirmation: 'bianca'
+    } , {
+      username: 'Maria',
       email: 'maria@maria.com',
       password: 'maria',
       passwordConfirmation: 'maria'
     }, {
-      username: 'sam',
+      username: 'Sam',
       email: 'sam@sam.com',
       password: 'sam',
       passwordConfirmation: 'sam'
     }, {
-      username: 'jim',
-      email: 'jim@jim.com',
-      password: 'jim',
-      passwordConfirmation: 'jim'
+      username: 'James',
+      email: 'james@james.com',
+      password: 'james',
+      passwordConfirmation: 'james'
     }, {
-      username: 'louise',
-      email: 'louise@louise.com',
-      password: 'louise',
-      passwordConfirmation: 'louise'
+      username: 'Rich',
+      email: 'rich@rich.com',
+      password: 'rich',
+      passwordConfirmation: 'rich'
     }]))
     .then(users => Item.create([{
       category: 'Clothes',
@@ -105,7 +125,51 @@ mongoose.connect(dbURI, (err, db) => {
       salePitch: 'This CHANEL Maxi Jumbo XL Flap Bag is in Very Good Pre-Owned Condition accompanied by Chanel Dust Bag, Box, Authenticity Card, Care Booklet. Circa 1997. Primarily made from Lambskin Leather complimented by Gold hardware.',
       image: 'https://d38r3tbvwkical.cloudfront.net/images/131/picture/131050_1.jpg?c=1516270097',
       user: users[3]
-
+    }, {
+      category: 'Bags',
+      itemCategory: 'Jimmy Choo Rosalie Bag',
+      itemDescription: 'Shoulder bag',
+      designerName: 'Jimmy Choo',
+      size: 'm',
+      price: 330,
+      rrp: 545,
+      condition: 'Never Worn Without Tags',
+      material: 'Leather',
+      colour: 'Pink',
+      shipping: 'Royal Mail Signed 2nd Class £3.95',
+      salePitch: 'Please note, these items are pre-owned and may show some signs of storage, even when unworn and unused. This is reflected within the significantly reduced price. Please refer to images and use the zoom function for more detail.',
+      image: 'https://www.hardlyeverwornit.com/original_images/picture/148/148453_1.jpg?c=1531833975',
+      user: users[0]
+    }, {
+      category: 'Bags',
+      itemCategory: 'Dior Pink and White floral Saddle Bag',
+      itemDescription: 'Shoulder bag',
+      designerName: 'Dior',
+      size: 's',
+      price: 299,
+      rrp: 400,
+      condition: 'Worn A Few Times But Good Condition',
+      material: 'Canvas/ Leather',
+      colour: 'Pink',
+      shipping: 'Royal Mail Signed 2nd Class £3.95',
+      salePitch: 'Conditions Details : See the photographs pen leak but outside still in good condition reflected in price',
+      image: 'https://d38r3tbvwkical.cloudfront.net/images/144/picture/144363_1.jpg?c=1531730072',
+      user: users[0]
+    }, {
+      category: 'Shoes',
+      itemCategory: 'Alexander Mcqueen Grey Suede Boots',
+      itemDescription: 'Men Boots',
+      designerName: 'Alexander Mcqueen',
+      size: '9',
+      price: 285,
+      rrp: 565,
+      condition: 'Hardly Ever Worn/Used',
+      material: 'Suede',
+      colour: 'Grey/brown',
+      shipping: 'Royal Mail Signed 2nd Class £3.95',
+      salePitch: 'The boots are laced up, with a contrasting light grey sole. The shoes have hardly ever been worn however there are small scratches on the back of the shoes.',
+      image: 'https://d38r3tbvwkical.cloudfront.net/images/134/picture/134086_1.jpg?c=1531392690',
+      user: users[0]
     }]))
     .then(items => console.log(`${items.length} items created`))
     .catch(err => console.log(err))

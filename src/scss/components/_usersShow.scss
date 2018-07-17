@@ -14,10 +14,20 @@
 
 .media-profileinfo .media-content-image img  {
   margin-left: 40%;
-  margin-top: 5%;
+  margin-top: 2%;
   text-align: center;
   max-height: 256px;
   max-width: 256px;
   border-radius: 50%;
   border: 1px #dfdfdf 1px solid;
+  display: flex;
+}
+
+.image-selling img {
+  min-width: 330px;
+  min-height: 330px;
+}
+
+.image-selling {
+  display: flex;
 }

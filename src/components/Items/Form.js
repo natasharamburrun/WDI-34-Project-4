@@ -79,8 +79,9 @@ const ItemsForm = ({ handleChange, handleSubmit, handleFilestack, data }) => {
               {data.item.image && <img src={data.item.image} />}
             </div>
           )}
+          onChange={handleChange}
+          value={data.item.image || ''}
         />
-        <input className="input" name="image" placeholder="image" onChange={handleChange} value={data.item.image || ''}/>
         {data.errors.image &&<small>{data.errors.image}</small>}
       </div>
 

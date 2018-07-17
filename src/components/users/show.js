@@ -58,9 +58,9 @@ class UsersShow extends React.Component {
         <article className="container-profileforsale">
           <div className="columns">
             <div className="column is-one-third-desktop is-half-tablet">
-              <div className="content">
+              <div className="content-img">
                 <h4 className="title">Items for sale</h4>
-                <figure className="image">
+                <figure className="image-selling">
                   {this.state.user.items && this.state.user.items.map((item) =>
                     <div key={item._id}>
                       <Link to={`/items/${item._id}`}>
