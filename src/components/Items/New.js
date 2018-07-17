@@ -7,26 +7,13 @@ class ItemsNew extends React.Component {
 
   state = {
     errors: {},
-    images: {}
+    images: {},
+    item: {}
   };
 
-  componentDidMount() {
-    axios({
-      url: '/api/items',
-      method: 'GET'
-    })
-      .then(res => {
-        // console.log(res.data);
-        const options = res.data.map(item => {
-          return { value: item._id, label: item.name };
-        });
-        // console.log(options);
-        this.setState({ options });
-      });
-  }
-
   handleChange = ({ target: { name, value }}) => {
-    this.setState({ [name]: value });
+    const item = { ...this.state.item, [name]: value };
+    this.setState({ item }, () => console.log(this.state));
   }
 
   handleFilestack = result => {
@@ -39,7 +26,7 @@ class ItemsNew extends React.Component {
     axios({
       url: '/api/items',
       method: 'POST',
-      data: this.state,
+      data: this.state.item,
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
       .then(() => this.props.history.push('/items'))

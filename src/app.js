@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import PaymentPage from './components/pages/PaymentPage';
+import ItemsBags from './components/pages/bags';
 import UsersIndex from './components/Users/Index';
 import UsersShow from './components/Users/Show';
 import UsersEdit from './components/Users/Edit';
@@ -39,6 +40,7 @@ class App extends React.Component {
                 <ProtectedRoute path="/items/new" component={ItemsNew} />
                 <Route path="/users/:id" component={UsersShow}/>
                 <Route path="/items/:id" component={ItemsShow} />
+                <Route path="/items/:id" component={ItemsBags} />
                 <Route path="/users" component={UsersIndex}/>
                 <Route path="/items" component={ItemsIndex} />
                 <Route path="/login" component={AuthLogin} />
