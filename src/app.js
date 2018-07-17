@@ -39,8 +39,8 @@ class App extends React.Component {
                 <Route path="/items/:id/checkout" component={PaymentPage}/>
                 <ProtectedRoute path="/items/new" component={ItemsNew} />
                 <Route path="/users/:id" component={UsersShow}/>
+                <Route path="/items/categories/:category" component={ItemsIndex} />
                 <Route path="/items/:id" component={ItemsShow} />
-                <Route path="/items/bags" component={ItemsBags} />
                 <Route path="/users" component={UsersIndex}/>
                 <Route path="/items" component={ItemsIndex} />
                 <Route path="/login" component={AuthLogin} />

@@ -10,8 +10,15 @@ class ItemsIndex extends React.Component {
     super();
     this.state = {
       items: [],
-      sort: 'name|asc'
+      // sort: 'name|asc',
+      category: ''
     };
+  }
+
+  componentDidUpdate() {
+    if(this.state.category !== this.props.match.params.category) {
+      this.setState({ category: this.props.match.params.category });
+    }
   }
 
   componentDidMount() {
@@ -25,42 +32,24 @@ class ItemsIndex extends React.Component {
 
   filteredItems = (items) => {
     const re = new RegExp(this.state.search, 'i');
-    return items.filter(item => {
-      return re.test(item.designerName);
-    });
-
+    return items.filter(item => re.test(item.designerName));
   }
 
-  handleSort = (e) => {
-    this.setState({ sort: e.target.value });
-  }
-
-  sortedItems = (items) => {
-    const [ prop, dir ] = this.state.sort.split('|');
-    return _.orderBy(items, prop, dir);
+  filterByCategory = (items) => {
+    return this.state.category ? items.filter(item => item.category === this.state.category) : items;
   }
 
   sortedAndFilteredItems = () => {
     const filtered = this.filteredItems(this.state.items);
-    return this.sortedItems(filtered);
+    return this.filterByCategory(filtered);
   }
 
   render(){
+    // this.filterByCategory();
     return(
       <section className="section-fullpage">
         <div className="container-search">
-          {/* searchbar */}
-          <div className="filters">
-            <input className="input" placeholder="search" onChange={this.handleSearch} />
-          </div>
-          <div className="control">
-            <div className="select">
-              <select onChange={this.handleSort}>
-                <option value="name | asc">Name (A-Z)</option>
-                <option value="name | desc">Name (Z-A)</option>
-              </select>
-            </div>
-          </div>
+          <input className="input" placeholder="search" onChange={this.handleSearch} />
         </div>
         <div className="container-content">
           <div className="columns is-multiline">

@@ -82,7 +82,7 @@ class ItemsShow extends React.Component {
               <div className="media-content">
                 <p className="title is-4">{this.state.item.user.username}</p>
                 <div className="content-salePitch">
-                  <h2 className="title">Sale Discription</h2>
+                  <h2 className="title">Sale Description</h2>
                   <h2 className="title">{this.state.item.salePitch}</h2>
                 </div>
               </div>

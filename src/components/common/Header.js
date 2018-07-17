@@ -80,11 +80,12 @@ class Header extends React.Component {
           <nav className="tabs is-boxed is-fullwidth">
             <div className="container">
               <ul>
-                {Auth.isAuthenticated() && <li><Link to="/items" className="is-active">Clothes</Link></li>}
-                {Auth.isAuthenticated() && <li><Link to="/items/bags" className="is-active">Bags</Link></li>}
-                {Auth.isAuthenticated() && <li><a>Shoes</a></li>}
-                {Auth.isAuthenticated() && <li><a>Accessories</a></li>}
-                {Auth.isAuthenticated() && <li><a>Blogs</a></li>}
+                {Auth.isAuthenticated() && <li><Link to="/items" className="is-active">All</Link></li>}
+                {Auth.isAuthenticated() && <li><Link to="/items/categories/clothes" className="is-active">Clothes</Link></li>}
+                {Auth.isAuthenticated() && <li><Link to="/items/categories/bags" className="is-active">Bags</Link></li>}
+                {Auth.isAuthenticated() && <li><Link to="/items/categories/shoes" className="is-active">Shoes</Link></li>}
+                {Auth.isAuthenticated() && <li><Link to="/items/categories/accessories" className="is-active">Accessories</Link></li>}
+                {/* {Auth.isAuthenticated() && <li><a>Blogs</a></li>} */}
               </ul>
             </div>
           </nav>
