@@ -1,5 +1,4 @@
-const stripe = require('stripe')('sk_test_idhzataEoF9qpiHgK7aeTV2K');
-// const stripe = require('stripe');
+const stripe = require('stripe')(process.env.STRIPE_API_KEY);
 
 function createPayment(req, res, err) {
   console.log(req.body);
