@@ -7,7 +7,6 @@ import UsersForm from './form';
 class UsersEdit extends React.Component {
 
   state = {
-    selectedOptions: [],
     errors: {},
     user: {}
   };

@@ -10,7 +10,7 @@ class ItemsNew extends React.Component {
     images: {},
     item: {}
   };
-
+  
   handleChange = ({ target: { name, value }}) => {
     const item = { ...this.state.item, [name]: value };
     this.setState({ item }, () => console.log(this.state));
