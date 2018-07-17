@@ -80,13 +80,9 @@ const ItemsForm = ({ handleChange, handleSubmit, handleFilestack, data }) => {
             </div>
           )}
         />
+        <input className="input" name="image" placeholder="image" onChange={handleChange} value={data.item.image || ''}/>
         {data.errors.image &&<small>{data.errors.image}</small>}
       </div>
-
-      {/* <div className="field">
-        <label className="label">Image</label>
-        <input className="input" name="image" placeholder="image" onChange={handleChange} value={data.item.image || ''}/>
-      </div> */}
 
       <div className="field">
         <label className="label">Sale Description</label>

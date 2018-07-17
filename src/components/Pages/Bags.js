@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
-class ItemsIndex extends React.Component {
+class BagsIndex extends React.Component {
 
   constructor() {
     super();
@@ -16,10 +16,11 @@ class ItemsIndex extends React.Component {
       .then(res => this.setState({ items: res.data }));
   }
 
-  //   function isClothes(item) {
-  //   return item.cat === ‘clothes’;
-  // }
-  //   const clothes = item.filter(isClothes);
+  filterItems = () => {
+    this.state.items.filter(item => {
+      return item.category;
+    });
+  }
 
   render(){
     return(
@@ -64,4 +65,4 @@ class ItemsIndex extends React.Component {
 
 }
 
-export default ItemsIndex;
+export default BagsIndex;

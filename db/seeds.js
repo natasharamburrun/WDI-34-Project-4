@@ -90,6 +90,22 @@ mongoose.connect(dbURI, (err, db) => {
       salePitch: 'beautiful dress, stretches to fit to give a great silhouette. Side zip to give snug fit for a flirty summer dress.',
       image: 'https://d38r3tbvwkical.cloudfront.net/images/137/picture/137532_1.jpg?c=1527010690',
       user: users[3]
+    }, {
+      category: 'Bags',
+      itemCategory: 'Ladies Shoulder Bags',
+      itemDescription: 'Chanel bag',
+      designerName: 'Chanel',
+      size: 's',
+      price: 2499,
+      rrp: 3500,
+      condition: 'worn',
+      material: 'Lambskin Leather',
+      colour: 'black',
+      shipping: 'Royal Mail Signed 2nd Class £3.95',
+      salePitch: 'This CHANEL Maxi Jumbo XL Flap Bag is in Very Good Pre-Owned Condition accompanied by Chanel Dust Bag, Box, Authenticity Card, Care Booklet. Circa 1997. Primarily made from Lambskin Leather complimented by Gold hardware.',
+      image: 'https://d38r3tbvwkical.cloudfront.net/images/131/picture/131050_1.jpg?c=1516270097',
+      user: users[3]
+
     }]))
     .then(items => console.log(`${items.length} items created`))
     .catch(err => console.log(err))
