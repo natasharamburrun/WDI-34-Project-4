@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div className="card-content-about">
       <div className="content-font">
-        <h3 className="title-about">How to sell your preloved designer items on designer marketplace in 5 simple steps</h3>
+        <h3 className="title is-3">How to sell your preloved designer items on designer marketplace in 5 simple steps</h3>
         <div className="about">
           <h2>Create your profile - creating an account, uploading a photo and writing a brief intro about yourself.</h2>
           <div className="createprofile">
