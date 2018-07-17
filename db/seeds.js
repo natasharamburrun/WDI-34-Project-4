@@ -13,42 +13,50 @@ mongoose.connect(dbURI, (err, db) => {
       username: 'Rachel',
       email: 'rachel@rachel.com',
       password: 'rachel',
-      passwordConfirmation: 'rachel'
+      passwordConfirmation: 'rachel',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4HsP8RYZ6xkXYwHOFmkLV1cRx-DjWnphDX_TOrJ4xGnMP9sLl'
     }, {
       username: 'Linda',
       email: 'linda@linda.com',
       password: 'linda',
-      passwordConfirmation: 'linda'
+      passwordConfirmation: 'linda',
+      image: 'https://cdn.networkrail.co.uk/wp-content/uploads/2016/12/Adriana-300x300.jpg'
     }, {
       username: 'Bella',
       email: 'bella@bella.com',
       password: 'bella',
-      passwordConfirmation: 'bella'
+      passwordConfirmation: 'bella',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqV3TnL8ahWi0RDLiy2wmithYyl5nbAauhVuel_8HxyllPXZ3P'
     } , {
       username: 'Bianca',
       email: 'bianca@bianca.com',
       password: 'bianca',
-      passwordConfirmation: 'bianca'
+      passwordConfirmation: 'bianca',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaLgVb7nWpH_3AtJg7I6jcG1b2EOWewYT2p0c6E095VV0ONWmo'
     } , {
       username: 'Maria',
       email: 'maria@maria.com',
       password: 'maria',
-      passwordConfirmation: 'maria'
+      passwordConfirmation: 'maria',
+      image: 'https://i2.wp.com/www.brandalley.co.uk/blog/wp-content/uploads/2015/06/Elisabeth-Hoff-black-and-white-profile.jpg?ssl=1'
     }, {
       username: 'Sam',
       email: 'sam@sam.com',
       password: 'sam',
-      passwordConfirmation: 'sam'
+      passwordConfirmation: 'sam',
+      image: 'https://pbs.twimg.com/profile_images/378800000063728441/b88ff5796b906b2ef532e180940e8ab2_400x400.jpeg'
     }, {
       username: 'James',
       email: 'james@james.com',
       password: 'james',
-      passwordConfirmation: 'james'
+      passwordConfirmation: 'james',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmRobdCrqMpmlV1t5m6H161cIKZvIHkiGxiYhHyg-ZSFLgXaPl'
     }, {
       username: 'Rich',
       email: 'rich@rich.com',
       password: 'rich',
-      passwordConfirmation: 'rich'
+      passwordConfirmation: 'rich',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8DlU2n-AMKbMxpzTQ3ZNEnFgfR7DhX2itzC2ggutIFVFom55nGA'
     }]))
     .then(users => Item.create([{
       category: 'clothes',
