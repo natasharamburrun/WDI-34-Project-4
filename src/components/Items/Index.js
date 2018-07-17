@@ -78,8 +78,8 @@ class ItemsIndex extends React.Component {
 
                     <div className="card-content">
                       <div className="content">
-                        <h2 className="title">{item.designerName}</h2>
-                        <h2 className="title">{item.itemDescription}</h2>
+                        <h2 className="title name">{item.designerName}</h2>
+                        <h2 className="title description">{item.itemDescription}</h2>
                       </div>
                       <div className="card-content">
                         <h2 className="title">Size: {item.size}</h2>
@@ -88,7 +88,7 @@ class ItemsIndex extends React.Component {
                       </div>
                     </div>
                   </div>
-    
+
                 </Link>
 
               </div>

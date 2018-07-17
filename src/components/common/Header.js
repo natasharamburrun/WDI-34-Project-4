@@ -81,7 +81,7 @@ class Header extends React.Component {
             <div className="container">
               <ul>
                 {Auth.isAuthenticated() && <li><Link to="/items" className="is-active">Clothes</Link></li>}
-                {Auth.isAuthenticated() && <li><a>Bags</a></li>}
+                {Auth.isAuthenticated() && <li><Link to="/items/bags" className="is-active">Bags</Link></li>}
                 {Auth.isAuthenticated() && <li><a>Shoes</a></li>}
                 {Auth.isAuthenticated() && <li><a>Accessories</a></li>}
                 {Auth.isAuthenticated() && <li><a>Blogs</a></li>}

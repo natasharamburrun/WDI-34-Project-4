@@ -28,7 +28,7 @@ class BagsIndex extends React.Component {
         <div className="container-content">
           <div className="columns is-multiline">
 
-            {this.state.items().map(item =>
+            {this.state.items.map(item =>
               <div key={item._id} className="column is-one-quarter-desktop is-half-tablet">
 
                 <Link to={`/items/${item._id}`}>
