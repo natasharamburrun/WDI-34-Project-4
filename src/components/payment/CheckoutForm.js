@@ -31,11 +31,11 @@ class CheckoutForm extends React.Component {
   }
 
   render() {
-    if(this.state.complete) return <h2 className="title is-2">Purchase Complete</h2>;
+    if(this.state.complete) return <h2 className="title is-2">Purchase Successful</h2>;
 
     return (
       <div className="checkout">
-        <p>Complete your purchase</p>
+        <p>Please enter your card details below to complete your purchase</p><br/>
         <CardElement />
         {/* creates a card type element that mounts the page when Component renders */}
         <button onClick={this.submit}>Send</button>

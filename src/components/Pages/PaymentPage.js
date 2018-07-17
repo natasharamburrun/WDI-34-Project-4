@@ -23,7 +23,7 @@ class PaymentPage extends React.Component {
     return (
 
       <div className="content-payment">
-        <h3 className="title is-3">Payment</h3>
+        {/* <h4 className="title is-4">Please enter your card details below</h4> */}
         <StripeProvider apiKey="pk_test_PjW7wZQs7SGqM4qnWg47WytW">
           <div className="cardpayment">
             <Elements>
