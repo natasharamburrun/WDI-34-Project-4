@@ -42,7 +42,7 @@ class ItemsShow extends React.Component {
       data: this.state,
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      .then(() => this.props.history.replace(`/items/${this.props.match.params.id}`));
+      .then(res => this.setState({ item: res.data }));
   }
 
   handleChange = ({ target: { name, value }}) => {
@@ -66,7 +66,7 @@ class ItemsShow extends React.Component {
     return (
       <div className="columns">
         {/* Items picture */}
-        <div className="column is-half">
+        <div className="column is-half-desktop is-half-tablet">
           <figure className="image is-square">
             <img src={this.state.item.image} />
           </figure>
@@ -96,10 +96,10 @@ class ItemsShow extends React.Component {
                 <img src={this.state.item.comments.image} />
               </p>
             </figure> */}
-            <div className="media-content-comments">
-              <div className="content">
+            <div className="media-content-comment">
+              <div className="content-comment">
                 <form onSubmit={this.handleSubmit}>
-                  <div className="field">
+                  <div className="field-comment">
                     <label className="label">Leave a comment for the seller</label>
                     <textarea className="textarea" name="content" placeholder="Write a comment" onChange={this.handleChange}/>
                   </div>
@@ -122,7 +122,7 @@ class ItemsShow extends React.Component {
           </article>
         </div>
         {/* product detail */}
-        <div className="column is-half">
+        <div className="column is-half-desktop is-half-tablet">
           <div className="content-itemdes">
             <h2 className="title">{this.state.item.designerName}</h2>
             <hr />

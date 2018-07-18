@@ -6,7 +6,7 @@ form {
   margin:
   0 auto;
   img {
-    margin-left: 23%;
+    margin-left: 34%;
     max-height: 256px;
     max-width: 256px;
     border-radius: 50%;
@@ -28,4 +28,18 @@ form {
 
 .section .container-join {
   min-height: 800px;
+}
+
+.submitProfilepic button {
+  display: flex;
+  display:table;
+  margin:
+  0 auto;
+}
+
+.update-button button {
+  display: flex;
+  display:table;
+  margin:
+  0 auto;
 }

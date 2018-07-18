@@ -46,7 +46,7 @@ class UsersEdit extends React.Component {
 
   render() {
     return (
-      <div className="container-content">
+      <div className="container-content-edit">
         <div className="media-content-image">
           <UsersForm
             handleFilestack={this.handleFilestack}

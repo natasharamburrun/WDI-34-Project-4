@@ -46,10 +46,10 @@ mongoose.connect(dbURI, (err, db) => {
       passwordConfirmation: 'sam',
       image: 'https://pbs.twimg.com/profile_images/378800000063728441/b88ff5796b906b2ef532e180940e8ab2_400x400.jpeg'
     }, {
-      username: 'James',
-      email: 'james@james.com',
-      password: 'james',
-      passwordConfirmation: 'james',
+      username: 'John',
+      email: 'john@john.com',
+      password: 'john',
+      passwordConfirmation: 'john',
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmRobdCrqMpmlV1t5m6H161cIKZvIHkiGxiYhHyg-ZSFLgXaPl'
     }, {
       username: 'Rich',

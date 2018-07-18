@@ -21,9 +21,9 @@ const UsersForm = ({ handleChange, handleSubmit, handleFilestack, data }) => {
           }}
           onSuccess={handleFilestack}
           render={({ onPick }) => (
-            <div>
-              <button onClick={onPick}>Upload Photo</button>
+            <div className="submitProfilepic">
               <img src={data.user.image} />
+              <button onClick={onPick}>Upload Photo</button>
             </div>
           )}
         />

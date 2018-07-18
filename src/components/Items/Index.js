@@ -63,6 +63,7 @@ class ItemsIndex extends React.Component {
                       <figure className="image">
                         <img src={item.image} />
                       </figure>
+                      <br/>
                     </div>
                     <div className="card-content">
                       <div className="content">
