@@ -102,7 +102,7 @@ mongoose.connect(dbURI, (err, db) => {
       shipping: 'Royal Mail Standard 2nd Class £2.95',
       salePitch: 'Good condition with a small faded mark below the waist on the right side. This can be seen with the zoom in in picture 2. The mark is hard to see due to the colour of the fabric. 8.5/10.',
       image: 'https://d38r3tbvwkical.cloudfront.net/images/119/picture/119820_1.jpg?c=1529852233',
-      user: users[2]
+      user: users[3]
     }, {
       category: 'clothes',
       itemCategory: 'Dress',
@@ -117,7 +117,7 @@ mongoose.connect(dbURI, (err, db) => {
       shipping: 'Royal Mail Signed 2nd Class £3.95',
       salePitch: 'beautiful dress, stretches to fit to give a great silhouette. Side zip to give snug fit for a flirty summer dress.',
       image: 'https://d38r3tbvwkical.cloudfront.net/images/137/picture/137532_1.jpg?c=1527010690',
-      user: users[3]
+      user: users[2]
     }, {
       category: 'bags',
       itemCategory: 'Ladies Shoulder Bags',
@@ -132,7 +132,7 @@ mongoose.connect(dbURI, (err, db) => {
       shipping: 'Royal Mail Signed 2nd Class £3.95',
       salePitch: 'This CHANEL Maxi Jumbo XL Flap Bag is in Very Good Pre-Owned Condition accompanied by Chanel Dust Bag, Box, Authenticity Card, Care Booklet. Circa 1997. Primarily made from Lambskin Leather complimented by Gold hardware.',
       image: 'https://d38r3tbvwkical.cloudfront.net/images/131/picture/131050_1.jpg?c=1516270097',
-      user: users[3]
+      user: users[2]
     }, {
       category: 'bags',
       itemCategory: 'Jimmy Choo Rosalie Bag',
@@ -147,7 +147,7 @@ mongoose.connect(dbURI, (err, db) => {
       shipping: 'Royal Mail Signed 2nd Class £3.95',
       salePitch: 'Please note, these items are pre-owned and may show some signs of storage, even when unworn and unused. This is reflected within the significantly reduced price. Please refer to images and use the zoom function for more detail.',
       image: 'https://www.hardlyeverwornit.com/original_images/picture/148/148453_1.jpg?c=1531833975',
-      user: users[0]
+      user: users[1]
     }, {
       category: 'bags',
       itemCategory: 'Dior Pink and White floral Saddle Bag',

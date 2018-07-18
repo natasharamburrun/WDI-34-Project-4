@@ -126,7 +126,7 @@ class ItemsShow extends React.Component {
           <div className="content-itemdes">
             <h2 className="title">{this.state.item.designerName}</h2>
             <hr />
-            <h3 className="title">{this.state.item.itemDescription}</h3>
+            <h2 className="title">{this.state.item.itemDescription}</h2>
             <h2 className="title">£{this.state.item.price}</h2>
             <Link className="button is-black" to={`/items/${this.state.item._id}/checkout`}>Buy Now</Link>
           </div>
