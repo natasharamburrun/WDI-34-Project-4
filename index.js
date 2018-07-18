@@ -8,18 +8,18 @@ const routes = require('./config/routes');
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
-app.use(express.static(`${__dirname}/public`));
-
 const { dbURI, port } = require('./config/environment');
+
 mongoose.connect(dbURI);
 
-// app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
-
+app.use(express.static(`${__dirname}/public`));
 
 app.use(bodyParser.json());
 
 
 app.use('/api', routes);
+app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
+
 
 app.use(errorHandler);
 

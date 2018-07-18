@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build":"wedbpack -p",
     "start:client": "webpack-dev-server",
     "start:server": "nodemon",
     "test:client": "nyc mocha test/client/**/*_spec.js --require test/client/helper --recursive --exit",
