@@ -35,12 +35,12 @@ class HomeIndex extends React.Component {
                 <Link to="/register" className="button">Sign up</Link>
               </div>
             </div>
-            <img src= ''/>
-            <h3 className="title"></h3>
           </div>
         </div>
         < hr/>
         <div className="container-content-homepage">
+          <h3 className="subheading2">New items added everyday</h3>
+          <h3 className="subheading2">login to view and purchase</h3>
           <div className="columns is-multiline">
             {this.state.items.map(item =>
               <div key={item._id} className="column is-one-quarter-desktop is-half-tablet">

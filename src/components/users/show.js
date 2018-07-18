@@ -28,6 +28,7 @@ class UsersShow extends React.Component {
       method: 'DELETE',
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
+      .then(Auth.logout())
       .then(() => Flash.setMessage('success', 'Profile successfully deleted'))
       .then(() => this.props.history.push('/'));
   }

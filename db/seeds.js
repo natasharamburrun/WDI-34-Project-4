@@ -28,10 +28,10 @@ mongoose.connect(dbURI, (err, db) => {
       passwordConfirmation: 'bella',
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqV3TnL8ahWi0RDLiy2wmithYyl5nbAauhVuel_8HxyllPXZ3P'
     } , {
-      username: 'Bianca',
-      email: 'bianca@bianca.com',
-      password: 'bianca',
-      passwordConfirmation: 'bianca',
+      username: 'Ami',
+      email: 'ami@ami.com',
+      password: 'ami',
+      passwordConfirmation: 'ami',
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaLgVb7nWpH_3AtJg7I6jcG1b2EOWewYT2p0c6E095VV0ONWmo'
     } , {
       username: 'Maria',
