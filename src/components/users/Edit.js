@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Auth from '../../lib/Auth';
 
-import UsersForm from './form';
+import UsersForm from './Form';
 
 class UsersEdit extends React.Component {
 
