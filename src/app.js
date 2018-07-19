@@ -4,20 +4,22 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import PaymentPage from './components/pages/PaymentPage';
-import UsersIndex from './components/Users/Index';
-import UsersShow from './components/Users/Show';
-import UsersEdit from './components/Users/Edit';
-import ItemsIndex from './components/Items/Index';
-// import ItemsBags from './components/Items/bags';
-import ItemsShow from './components/Items/Show';
-import ItemsNew from './components/Items/New';
-import ItemsEdit from './components/Items/Edit';
-import AuthLogin from './components/auth/login';
-import AuthRegister from './components/auth/register';
+import UsersIndex from './components/users/Index';
+import UsersShow from './components/users/Show';
+import UsersEdit from './components/users/Edit';
+import ItemsIndex from './components/items/Index';
+// import ItemsBags from './components/items/bags';
+import ItemsShow from './components/items/Show';
+import ItemsNew from './components/items/New';
+import ItemsEdit from './components/items/Edit';
+import AuthLogin from './components/auth/Login';
+import AuthRegister from './components/auth/Register';
 import Header from './components/common/Header';
 import FlashMessages from './components/common/FlashMessages';
 import ProtectedRoute from './components/common/ProtectedRoute';
 import NotFound from './components/pages/NotFound';
+
+
 
 import 'bulma';
 import './scss/style.scss';
