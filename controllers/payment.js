@@ -1,4 +1,5 @@
 const stripe = require('stripe')(process.env.STRIPE_API_KEY);
+// const User = require('../models/user');
 
 function createPayment(req, res, err) {
   console.log(req.body);
@@ -8,12 +9,14 @@ function createPayment(req, res, err) {
     description: req.body.description,
     source: req.body.token.id
   })
+    // .then(() => User.findById(req.currentUser._id))
     .then(status => {
       res.json({ status });
     })
     .catch(err);
 
 }
+
 module.exports = {
   create: createPayment
 };

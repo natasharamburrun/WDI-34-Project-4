@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {Elements, StripeProvider} from 'react-stripe-elements';
-import CheckoutForm from '../payment/CheckoutForm';
+import CheckoutForm from '../orders/CheckoutForm';
 
 
 class PaymentPage extends React.Component {

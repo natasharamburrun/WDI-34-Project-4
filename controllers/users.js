@@ -28,9 +28,18 @@ function deleteRoute(req, res, next) {
     .catch(next);
 }
 
+// //show profile for user
+function showUserRoute(req, res, next){
+  User.findById(req.currentUser._id)
+    .then(user => res.json(user))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
   update: updateRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  showUserRoute
+
 };

@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
-import PaymentPage from './components/pages/PaymentPage';
+import PaymentPage from './components/orders/PaymentPage';
+import OrdersShowPage from './components/orders/OrdersShowPage';
 import UsersIndex from './components/users/Index';
 import UsersShow from './components/users/Show';
 import UsersEdit from './components/users/Edit';
 import ItemsIndex from './components/items/Index';
-// import ItemsBags from './components/items/bags';
 import ItemsShow from './components/items/Show';
 import ItemsNew from './components/items/New';
 import ItemsEdit from './components/items/Edit';
@@ -39,6 +39,7 @@ class App extends React.Component {
                 <ProtectedRoute path="/users/:id/edit" component={UsersEdit} />
                 <ProtectedRoute path="/items/:id/edit" component={ItemsEdit} />
                 <Route path="/items/:id/checkout" component={PaymentPage}/>
+                <Route path="/orders/:id" component={OrdersShowPage}/>
                 <ProtectedRoute path="/items/new" component={ItemsNew} />
                 <Route path="/users/:id" component={UsersShow}/>
                 <Route path="/items/categories/:category" component={ItemsIndex} />

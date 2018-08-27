@@ -1,17 +1,19 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const uniqueValidator = require('mongoose-unique-validator');
+const orderSchema = require('./order');
 
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   image: { type: String, default: 'https://thumbs.dreamstime.com/b/cute-vector-girl-avatar-icon-young-woman-face-pretty-lady-port-portrait-cartoon-illustration-beautiful-brunette-76317393.jpg'},
-  bio: String
+  bio: String,
+  orders: [orderSchema]
   // bio: { type: String, default: 'Tell us about youself!' }
 }, {
   id: false
-  //this dont make an ID virtual
+  // this dont make an ID virtual
 });
 
 userSchema.virtual('items', {
