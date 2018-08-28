@@ -7,8 +7,33 @@ const ItemsForm = ({ handleChange, handleSubmit, handleFilestack, data }) => {
     <form onSubmit={handleSubmit}>
       <div className="field">
         <label className="label">Category</label>
-        <input className="input" name="category" placeholder="Category" onChange={handleChange} value={data.item.category || ''}/>
+        <div className="control">
+          <div className="select is-fullwidth">
+            <select name="category" onChange={handleChange} value={data.item.category || ''} >
+              <option value="" disabled>Please Choose</option>
+              <option>Clothes</option>
+              <option>Bags</option>
+              <option>Shoes</option>
+              <option>Accessories</option>
+            </select>
+          </div>
+        </div>
         {data.errors.category &&<small>{data.errors.category}</small>}
+      </div>
+
+      <div className="field">
+        <label className="label">Gender</label>
+        <div className="control">
+          <div className="select is-fullwidth">
+            <select name="gender" onChange={handleChange} value={data.item.gender || ''} >
+              <option value="" disabled>Please Choose</option>
+              <option>Female</option>
+              <option>Male</option>
+              <option>Kids</option>
+            </select>
+          </div>
+        </div>
+        {data.errors.gender &&<small>{data.errors.gender}</small>}
       </div>
 
       <div className="field">
@@ -31,8 +56,19 @@ const ItemsForm = ({ handleChange, handleSubmit, handleFilestack, data }) => {
 
       <div className="field">
         <label className="label">Size</label>
-        <input className="input" name="size" placeholder="size" onChange={handleChange} value={data.item.size || ''}/>
-        {data.errors.size &&<small>{data.errors.size}</small>}
+        <div className="control">
+          <div className="select is-fullwidth">
+            <select name="size" onChange={handleChange} value={data.item.size || ''} >
+              <option value="" disabled>Please Choose</option>
+              <option>XL</option>
+              <option>L</option>
+              <option>M</option>
+              <option>S</option>
+              <option>XS</option>
+            </select>
+          </div>
+          {data.errors.size &&<small>{data.errors.size}</small>}
+        </div>
       </div>
 
       <div className="field">
@@ -46,9 +82,22 @@ const ItemsForm = ({ handleChange, handleSubmit, handleFilestack, data }) => {
         <input className="input" name="rrp" placeholder="rrp" onChange={handleChange} value={data.item.rrp || ''}/>
       </div>
       {data.errors.rrp &&<small>{data.errors.rrp}</small>}
+
       <div className="field">
         <label className="label">Condition</label>
-        <input className="input" name="condition" placeholder="condition" onChange={handleChange} value={data.item.condition || ''}/>
+        <div className="control">
+          <div className="select is-fullwidth">
+            <select name="condition" onChange={handleChange} value={data.item.condition || ''} >
+              <option value="" disabled>Please Choose</option>
+              <option>New with tags</option>
+              <option>New</option>
+              <option>Very good</option>
+              <option>Good</option>
+              <option>Satisfactory</option>
+            </select>
+          </div>
+          {data.errors.condition &&<small>{data.errors.condition}</small>}
+        </div>
       </div>
 
       <div className="field">
@@ -66,7 +115,7 @@ const ItemsForm = ({ handleChange, handleSubmit, handleFilestack, data }) => {
       <div className="field">
         <label className="label">Image</label>
         <ReactFilestack
-          apikey={'AbEqJmhCVTTmU0EfzPrSoz'}
+          apikey={'AVG2Ji6nNTN2YLLIdg09Mz'}
           options={{
             accept: ['image/*'],
             maxSize: 500 * 500,

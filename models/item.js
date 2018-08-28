@@ -6,17 +6,19 @@ const commentSchema = new mongoose.Schema({
 });
 
 const itemSchema = new mongoose.Schema({
-  category: { type: String, required: true},
+
+  category: { type: String, enum: ['Clothes', 'Bags', 'Shoes', 'Accessories'], required: 'This field is required' },
+  gender: {type: String, enum: ['Female', 'Male', 'Kids'], required: 'This field is required' },
   itemCategory: String,
-  itemDescription: String,
-  designerName: { type: String, required: true},
-  size: { type: String, required: true},
-  price: { type: String, required: true},
+  itemDescription: { type: String, required: 'This field is required'},
+  designerName: { type: String, required: 'This field is required'},
+  size: { type: String, enum: ['XL', 'L', 'M', 'S', 'XS'], required: 'This field is required' },
+  price: { type: String, required: 'This field is required'},
   rrp: Number,
-  material: String,
-  condition: String,
-  colour: String,
-  image: { type: String, required: true},
+  material: { type: String, required: 'This field is required'},
+  condition: { type: String, enum: ['New with tags', 'New', 'Very good', 'Good', 'Satisfactory'], required: 'This field is required' },
+  colour: { type: String, required: 'This field is required'},
+  image: { type: String, required: 'This field is required'},
   shipping: String,
   user: { type: mongoose.Schema.ObjectId, ref: 'User' },
   salePitch: String,

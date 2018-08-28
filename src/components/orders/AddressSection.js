@@ -18,7 +18,7 @@ const AddressSection = ({ handleChange, data }) => {
       <div className="field">
         <label className="label" htmlFor="deliveryBillingPostcode">Postcode</label>
         <div className="control has-icons-left">
-          <input className="input" type="text" placeholder="Enter your Postcode" name="deliveryPostCode" onChange={handleChange}/>
+          <input className="input" type="text" placeholder="Enter your Postcode" name="deliveryPostCode" onChange={handleChange} />
           <span className="icon is-small is-left"><i className="fas fa-home"></i></span>
         </div>
         {data.errors.deliveryPostCode && <small>{data.errors.deliveryPostCode}</small>}
@@ -27,7 +27,7 @@ const AddressSection = ({ handleChange, data }) => {
       <div className="field">
         <label className="label" htmlFor="deliveryBillingCity">City</label>
         <div className="control has-icons-left">
-          <input className="input" type="text" placeholder="Enter your City" name="deliveryBillingCity" onChange={handleChange}/>
+          <input className="input" type="text" placeholder="Enter your City" name="deliveryBillingCity" onChange={handleChange} />
           <span className="icon is-small is-left"><i className="fas fa-home"></i></span>
         </div>
         {data.errors.deliveryBillingCity && <small>{data.errors.deliveryBillingCity}</small>}

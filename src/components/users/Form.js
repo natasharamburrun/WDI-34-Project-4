@@ -13,7 +13,7 @@ const UsersForm = ({ handleChange, handleSubmit, handleFilestack, data }) => {
       <div className="field">
         <label className="label">Image</label>
         <ReactFilestack
-          apikey={'AbEqJmhCVTTmU0EfzPrSoz'}
+          apikey={'AVG2Ji6nNTN2YLLIdg09Mz'}
           options={{
             accept: ['image/*'],
             maxSize: 500 * 500,
