@@ -61,6 +61,7 @@ class CheckoutForm extends React.Component {
           headers: {Authorization: `Bearer ${Auth.getToken()}`},
           data: {
             ...token,
+            currency: 'GBP',
             amount: this.props.amount * 100,
             payee: User.getCurrentUser().username || '',
             UserEmail: User.getCurrentUser().email || ''
@@ -73,7 +74,6 @@ class CheckoutForm extends React.Component {
   render() {
     if(this.state.complete)
       return <h2 className="title is-2">Purchase Successful</h2>;
-    // console.log(User.getCurrentUser().username);
 
     return (
       <div className="checkout">

@@ -4,8 +4,11 @@
   margin:
   0 auto;
   text-align: center;
-  border: 1px solid #dfdfdf;
-  padding: 30px 100px;
+  border: 1px solid white;
+  padding: 30px 200px;
+  p {
+    font-weight: bold;
+  }
 }
 
 .card-content-homepage {
@@ -18,4 +21,9 @@
 
 h3 {
   text-align: center;
+  padding-bottom: 20px;
+}
+
+.section-homepage {
+  min-height: 800px;
 }

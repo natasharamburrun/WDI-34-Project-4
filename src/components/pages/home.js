@@ -20,13 +20,12 @@ class HomeIndex extends React.Component {
       <section className="section-homepage">
         <div className="card-content-about">
           <div className="content-font">
-            < hr/>
             <h3 className="title">Welcome to Designer Marketplace</h3>
             <h3 className="title">The online marketplace to BUY and SELL Luxury Pre-Owned Fashion. </h3>
             <h3 className="title">Please join our community and sign in to view and purchase items. </h3>
 
             <div className="card-content-join">
-              <p>Join our community</p><br/>
+              <p>Join our community now</p><br/>
               <div className="update-button">
                 <Link to="/login" className="button">Sign in</Link>
               </div>
