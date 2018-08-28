@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   image: { type: String, default: 'https://thumbs.dreamstime.com/b/cute-vector-girl-avatar-icon-young-woman-face-pretty-lady-port-portrait-cartoon-illustration-beautiful-brunette-76317393.jpg'},
   bio: String,
+  cart: [{type: mongoose.Schema.ObjectId, ref: 'Item'}],
   orders: [orderSchema]
   // bio: { type: String, default: 'Tell us about youself!' }
 }, {

@@ -1,40 +1,40 @@
 import React from 'react';
 
-class AddressSection extends React.Component {
 
-  render(){
-    return(
-      <div>
-        <p>Please enter your delivery/billing address details:</p>
-        <div className="field">
-          <label className="label" htmlFor="deliveryBillingAddress">Number and Street Name</label>
-          <div className="control has-icons-left">
-            <input className="input" type="text" placeholder="Enter your Number and Street Name" name="deliveryBillingAddress" onChange={this.props.handlechange}/>
-            <span className="icon is-small is-left"><i className="fas fa-home"></i></span>
-          </div>
-          {this.props.deliveryBillingAddress && <small>{this.props.deliveryBillingAddress}</small>}
-        </div>
+const AddressSection = ({ handleChange, data }) => {
+  return(
+    <div>
+      <p>Please enter your delivery/billing address details:</p>
 
-        <div className="field">
-          <label className="label" htmlFor="deliveryBillingPostcode">Postcode</label>
-          <div className="control has-icons-left">
-            <input className="input" type="text" placeholder="Enter your Postcode" name="deliveryPostCode" onChange={this.props.handlechange}/>
-            <span className="icon is-small is-left"><i className="fas fa-home"></i></span>
-          </div>
-          {this.props.deliveryPostCode && <small>{this.props.deliveryPostCode}</small>}
+      <div className="field">
+        <label className="label" htmlFor="deliveryBillingAddress">Number and Street Name</label>
+        <div className="control has-icons-left">
+          <input className="input" type="text" placeholder="Enter your Number and Street Name" name="deliveryBillingAddress" onChange={handleChange}/>
+          <span className="icon is-small is-left"><i className="fas fa-home"></i></span>
         </div>
-
-        <div className="field">
-          <label className="label" htmlFor="deliveryBillingCity">City</label>
-          <div className="control has-icons-left">
-            <input className="input" type="text" placeholder="Enter your City" name="deliveryBillingCity" onChange={this.props.handlechange}/>
-            <span className="icon is-small is-left"><i className="fas fa-home"></i></span>
-          </div>
-          {this.props.deliveryBillingCity && <small>{this.props.deliveryBillingCity}</small>}
-        </div>
+        {data.errors.deliveryBillingAddress &&<small>{data.errors.deliveryBillingAddress}</small>}
       </div>
-    );
-  }
 
-}
+      <div className="field">
+        <label className="label" htmlFor="deliveryBillingPostcode">Postcode</label>
+        <div className="control has-icons-left">
+          <input className="input" type="text" placeholder="Enter your Postcode" name="deliveryPostCode" onChange={handleChange}/>
+          <span className="icon is-small is-left"><i className="fas fa-home"></i></span>
+        </div>
+        {data.deliveryPostCode && <small>{data.deliveryPostCode}</small>}
+      </div>
+
+      <div className="field">
+        <label className="label" htmlFor="deliveryBillingCity">City</label>
+        <div className="control has-icons-left">
+          <input className="input" type="text" placeholder="Enter your City" name="deliveryBillingCity" onChange={handleChange}/>
+          <span className="icon is-small is-left"><i className="fas fa-home"></i></span>
+        </div>
+        {data.deliveryBillingCity && <small>{data.deliveryBillingCity}</small>}
+      </div>
+
+    </div>
+  );
+};
+
 export default AddressSection;

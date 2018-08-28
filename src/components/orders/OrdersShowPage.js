@@ -8,19 +8,30 @@ import Auth from '../../lib/Auth';
 
 class OrderShowPage extends React.Component{
 
-
+  state = {
+    order: {
+      createdAt: ''
+    }
+  }
   componentDidMount= () => {
     axios({
       method: 'GET',
       url: `/api/orders/${this.props.id}`,
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
-    });
-  }
+    })
+      .then(res => {
+
+        this.setState({
+          order: res.data
+        });
+      });
+
+  };
 
   render() {
     return (
       <section>
-        <h1>orderpage</h1>
+        <h1>ordered page</h1>
 
 
       </section>

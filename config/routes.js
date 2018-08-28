@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const items = require('../controllers/items');
 const auth = require('../controllers/auth');
-const payment = require('../controllers/payment');
 const users = require('../controllers/users');
 const secureRoute = require('../lib/secureRoute');
 const orders = require('../controllers/orders');
@@ -35,15 +34,11 @@ router.delete('/items/:id/comments/:commentId', items.commentDelete);
 router.post('/register', auth.register);
 router.post('/login', auth.login);
 
-//router for payment charges
-router.post('/charge', payment.create);
-
-
-
-
-//router to show orders
+//router for payment charges and show orders
 router.route('/orders')
+  .post(orders.orderCreate)
   .get(orders.orderIndex);
+
 router.route('/orders/:id')
   .get(orders.orderShow);
 

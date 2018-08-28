@@ -80,10 +80,11 @@ class ItemsShow extends React.Component {
                 </figure>
               </div>
               <div className="media-content">
+                <p>ABOUT THE SELLER:</p>
                 <p className="title is-4">{this.state.item.user.username}</p>
                 <div className="content-salePitch">
-                  <h2 className="title">Sale Description</h2>
-                  <h2 className="title">{this.state.item.salePitch}</h2>
+                  <h2 className="title"><strong>Sale Description:</strong> {this.state.item.salePitch}</h2>
+
                 </div>
               </div>
             </div>
