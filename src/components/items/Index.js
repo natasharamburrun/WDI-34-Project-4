@@ -51,7 +51,7 @@ class ItemsIndex extends React.Component {
     return(
       <section className="section-fullpage">
         <div className="container-search">
-          <input className="input" placeholder="search" onChange={this.handleSearch} />
+          <input className="input" placeholder="Search by Brand" onChange={this.handleSearch} />
         </div>
         <div className="container-content">
           <div className="columns is-multiline">

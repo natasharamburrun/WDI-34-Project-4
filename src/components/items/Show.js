@@ -91,36 +91,40 @@ class ItemsShow extends React.Component {
           </div>
           <hr/>
           {/* comments */}
-          <article className="media">
-            {/* <figure className="media-left">
-              <p className="image is-64x64">
-                <img src={this.state.item.comments.image} />
-              </p>
-            </figure> */}
-            <div className="media-content-comment">
-              <div className="content-comment">
-                <form onSubmit={this.handleSubmit}>
-                  <div className="field-comment">
-                    <label className="label">Leave a comment for the seller</label>
-                    <textarea className="textarea" name="content" placeholder="Write a comment" onChange={this.handleChange}/>
-                  </div>
-                  <button className="button success">Send</button>
-                </form>
-              </div>
-              <div className="content">
-                {this.state.item.comments.map((comment) =>
-                  <div key={comment._id}>
-                    {comment.author}
-                    {comment.content}
-                    <div className="media-right">
-                      <button onClick={() => this.deleteComment(comment._id)} className="delete"></button>
-                    </div>
-                  </div>
-                )}
-              </div>
 
+          {/* <section className="comment-form">
+            <form onSubmit={handleSubmit}>
+              <article className="media">
+                <figure className="media-left">
+                  <Link to={`/users/${comment.author._id}`}>
+                    <img src={comment.author.image} />
+                  </Link>
+                </figure> */}
+          <div className="media-content-comment">
+            <div className="content-comment">
+              <form onSubmit={this.handleSubmit}>
+                <div className="field-comment">
+                  <label className="label">Leave a comment for the seller</label>
+                  <textarea className="textarea" name="content" placeholder="Write a comment" onChange={this.handleChange}/>
+                </div>
+                <button className="button success">Send</button>
+              </form>
             </div>
-          </article>
+            <div className="content">
+              {this.state.item.comments.map((comment) =>
+                <div key={comment._id}>
+                  {comment.author}
+                  {comment.content}
+                  <div className="media-right">
+                    <button onClick={() => this.deleteComment(comment._id)} className="delete"></button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+          {/* </article>
+            </form>
+          </section> */}
         </div>
         {/* product detail */}
         <div className="column is-half-desktop is-half-tablet">
