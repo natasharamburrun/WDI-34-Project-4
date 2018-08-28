@@ -29,7 +29,8 @@ const ItemsForm = ({ handleChange, handleSubmit, handleFilestack, data }) => {
               <option value="" disabled>Please Choose</option>
               <option>Female</option>
               <option>Male</option>
-              <option>Kids</option>
+              <option>Girls</option>
+              <option>Boys</option>
             </select>
           </div>
         </div>
@@ -108,8 +109,28 @@ const ItemsForm = ({ handleChange, handleSubmit, handleFilestack, data }) => {
 
       <div className="field">
         <label className="label">Colour</label>
-        <input className="input" name="colour" placeholder="colour" onChange={handleChange} value={data.item.colour || ''}/>
-        {data.errors.colour &&<small>{data.errors.colour}</small>}
+        <div className="control">
+          <div className="select is-fullwidth">
+            <select name="colour" onChange={handleChange} value={data.item.colour || ''} >
+              <option value="" disabled>Please Choose</option>
+              <option>Black</option>
+              <option>Beige/Nude</option>
+              <option>Blue</option>
+              <option>Animal Print</option>
+              <option>Floral</option>
+              <option>Green</option>
+              <option>Grey</option>
+              <option>Multi-Coloured/Stripes</option>
+              <option>Orange</option>
+              <option>Pink</option>
+              <option>Purple</option>
+              <option>Tan/Brown</option>
+              <option>Yellow</option>
+              <option>Silver</option>
+            </select>
+          </div>
+          {data.errors.colour &&<small>{data.errors.colour}</small>}
+        </div>
       </div>
 
       <div className="field">
