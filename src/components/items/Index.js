@@ -63,12 +63,12 @@ class ItemsIndex extends React.Component {
               <div key={item._id} className="column is-one-quarter-desktop is-half-tablet">
                 <Link to={`/items/${item._id}`}>
                   <div className="card">
-                    <div className="card-image">
-                      <figure className="image">
-                        <img src={item.image} />
-                      </figure>
-                      <br/>
-                    </div>
+                    {/* <div className="card-image"> */}
+                    <figure className="image is-250x250">
+                      <img src={item.image} />
+                    </figure>
+                    <br/>
+                    {/* </div> */}
                     <div className="card-content">
                       <div className="content">
                         <h2 className="title name">{item.designerName}</h2>

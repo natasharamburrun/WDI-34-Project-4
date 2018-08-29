@@ -5,7 +5,7 @@ const CommentForm = ({commentCreate, handleCommentChange}) => {
 
     <section className="comment-box">
       <form onSubmit={commentCreate}>
-        <article className="media">
+        <article className="media-comment">
           <div className="media-content-comment">
             <div className="content-comment">
               <div className="field-comment">

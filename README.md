@@ -2,6 +2,7 @@
 # GA WDI-34  Project #4: A MERN stack Application
 
 ## Designer Marketplace
+Visit app which is deployed on [Heroku](https://designer-marketplace.herokuapp.com/)
 
 ### Project Brief
 * **Build a full-stack application** by making your own backend and your own front-end
