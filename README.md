@@ -57,7 +57,8 @@ filteredItems = (items) => {
 <p align="center"><img src="src/images/buynow.gif" "width=700"></p>
 
 CODE:
-I used Stripe Elements with React to build the payment flow to collect data from the user and create a token.
+I used Stripe Elements with React to build the payment flow to collect data from the user and create a token. I have included part of the code which implements the card payment.
+
 ```
 submit = (e) => {
   e.preventDefault();
@@ -79,18 +80,28 @@ submit = (e) => {
     });
 }
 ```
-Implementing the Stripe card API took a significant amount of time to complete. The documents and instructions I followed were intuitive although as we learnt a different approach, such as making AXIOS request rather than Fetch, this means I had to watch tutorials and read a lot of documentation before implementing this API.
-
 <strong>Add a new item</strong>: This application has CRUD functionality where you can create, read, update and delete items for sale. For this feature, I have implemented API Filestack to enable users to upload images. I have also included drop-down options to make it easier for users to select options when filling out the form.
 <p align="center"><img src="src/images/new-items.gif" "width=700"></p>
 
 <strong>Users Profile Index Page</strong>: I have created a users profile index page to provide the app a community feel. Allowing users to view profiles for buyers and sellers.
 <p align="center"><img src="src/images/user-index.png" "width=700"></p>
 
-#### Challenges and features to include
+<strong>Users Profile Index Page</strong>: Each user has a profile page which currently only includes the items they have put for sale. I would like this page to include more features such as followers, likes and favourites.
+<p align="center"><img src="src/images/profile-page.png" "width=700"></p>
+
+#### Win:
+I am thrilled with the amount of work I achieved in a short space of time and implementing features such as payments is great achievement.
+
+#### Challenges:
+Implementing the Stripe card API took a significant amount of time to complete. The documents and instructions I followed were intuitive although as we learnt a different approach, such as making AXIOS request rather than Fetch, this means I had to watch tutorials and read a lot of documentation before implementing this API.  
+
+#### Additional features
+I would like to add the following additional features:
 - Disable buy now button when an item has been sold
-- Payment successful to include order info including order id, and buyer info, i.e. email and address.
-- filter options to include sort by colour, item or price.
+- Payment successful page to include other information including order id, and buyer info, i.e. email and address.
+- Add an order show and an order index page so users can review items bought
+- Filter options to include sort by colour, item or price on item index page.
 - Favourite items and list on the user profile page (i.e. wishlist)
 - Allow users to follow each other
 - Implement Apple pay, Google pay and PayPal
+- Make app fully responsive
