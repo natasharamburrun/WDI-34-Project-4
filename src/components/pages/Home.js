@@ -43,11 +43,11 @@ class HomeIndex extends React.Component {
               <div key={item._id} className="column is-one-quarter-desktop is-half-tablet">
                 {!Auth.isAuthenticated() && <Link to={'/login'}>
                   <div className="card is-3by2">
-                    <div className="card-image">
-                      <figure className="image">
-                        <img src={item.image} />
-                      </figure>
-                    </div>
+                    {/* <div className="card-image"> */}
+                    <figure className="image is-250x250">
+                      <img src={item.image} />
+                    </figure>
+                    {/* </div> */}
                     <div className="card-content-homepage">
                       <div className="content">
                         <h2 className="title">{item.designerName}</h2>
