@@ -27,6 +27,8 @@ I choose to build a resale e-commerce application which allows the public to sel
 <strong>Homepage</strong>: The homepage invites new users to the website and provides a taster of what Designer Marketplace has to offer for sale.
 <p align="center"><img src="src/images/homepage.gif" "width=700"></p>
 
+<hr/>
+
 #### Planning and Design
 I used Draw.io to plan a skeleton of the website identifying the functionality and design and managed this project using Trello to organise and prioritise tasks.
 
@@ -35,6 +37,8 @@ I used Draw.io to plan a skeleton of the website identifying the functionality a
 
 <strong>Planning - Trello</strong>:
 <p align="center"><img src="src/images/trello.png" "width=700"></p>
+
+<hr/>
 
 #### The build
 I have successfully built a fully functioning full-stack application with a back-end and front-end that has a RESTful design pattern.
@@ -89,19 +93,25 @@ submit = (e) => {
 <strong>Users Profile Index Page</strong>: Each user has a profile page which currently only includes the items they have put for sale. I would like this page to include more features such as followers, likes and favourites.
 <p align="center"><img src="src/images/profile-page.png" "width=700"></p>
 
+<hr/>
+
 #### Win:
 I am thrilled with the amount of work I achieved in a short space of time and implementing features such as payments is great achievement.
+
+<hr/>
 
 #### Challenges:
 Implementing the Stripe card API took a significant amount of time to complete. The documents and instructions I followed were intuitive although as we learnt a different approach, such as making AXIOS request rather than Fetch, this means I had to watch tutorials and read a lot of documentation before implementing this API.  
 
+<hr/>
+
 #### Additional features
 I would like to add the following additional features:
-- Disable buy now button when an item has been sold
+- Disable buy now button when an item has been sold.
 - Payment successful page to include other information including order id, and buyer info, i.e. email and address.
-- Add an order show and an order index page so users can review items bought
+- Add an order show and an order index page so users can review items bought.
 - Filter options to include sort by colour, item or price on item index page.
-- Favourite items and list on the user profile page (i.e. wishlist)
-- Allow users to follow each other
-- Implement Apple pay, Google pay and PayPal
-- Make app fully responsive
+- Favourite items and list on the user profile page (i.e. wishlist).
+- Allow users to follow each other.
+- Implement Apple pay, Google pay and PayPal.
+- Make app fully responsive.
