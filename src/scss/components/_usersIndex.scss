@@ -3,14 +3,14 @@
   .card-content {
     max-height: 100px;
     display: block;
-    margin: 0 auto;
   }
 }
 
 //headline text
 .section-members .content h5 {
-  font-size: 20px;
+  font-size: 28px;
   text-align: center;
+  margin-bottom: 40px;
 }
 .card-image-members img {
   // border-radius: 50%;
@@ -22,6 +22,8 @@
 .card-image-members {
   background-color: #EDEFF0;
   // padding-bottom: 20px;
+  border: 3px solid white;
+  padding-top: 50px;
 }
 
 .section-members .column.is-one-quarter-desktop {

@@ -1,24 +1,25 @@
 .section {
   font-family: 'Gilda Display', serif;
+  padding: 50px;
 }
 
 .content-info h4 {
   margin-bottom: 10px;
   margin-top: 10px;
-  text-align: center;
+  // text-align: center;
 }
 .media-profileinfo {
   border: 1px #dfdfdf solid;
   text-align: center;
+  display: inline;
 }
 
 .media-profileinfo .media-content-image img  {
-  margin-left: 40%;
+  // margin-left: 40%;
   margin-top: 2%;
-  text-align: center;
+  // text-align: center;
   max-height: 256px;
   max-width: 256px;
-  border-radius: 50%;
   border: 1px #dfdfdf 1px solid;
   display: flex;
 }

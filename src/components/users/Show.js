@@ -38,12 +38,11 @@ class UsersShow extends React.Component {
     if(!this.state.user) return <h2 className="title is-2">Loading...</h2>;
     return (
       <section className="user-show">
-        <hr />
         <article className="media-profileinfo">
           <div className="media-content">
             <div className="content-img">
               <figure className="media-content-image">
-                <p className="image is-256x256">
+                <p className="image is-125x125">
                   <img src={this.state.user.image} />
                 </p>
               </figure>
