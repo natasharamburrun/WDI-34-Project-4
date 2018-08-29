@@ -4,7 +4,6 @@
   margin:
   0 auto;
   text-align: center;
-  // border: 1px solid white;
   padding: 30px 200px;
   p {
     font-weight: bold;
@@ -16,12 +15,11 @@
   padding: 20px;
   h2 {
     font-size: 16px;
+    h3 {
+      text-align: center;
+      padding-bottom: 20px;
+    }
   }
-}
-
-h3 {
-  text-align: center;
-  padding-bottom: 20px;
 }
 
 .section-homepage {
