@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Auth from '../../lib/Auth';
+import CommentForm  from './CommentForm';
+import CommentBox  from './CommentBox';
 
 class ItemsShow extends React.Component {
 
@@ -9,7 +11,8 @@ class ItemsShow extends React.Component {
     super();
     this.state = {
       data: {
-        content: ''
+        content: '',
+        comment: []
       }
     };
   }
@@ -34,8 +37,9 @@ class ItemsShow extends React.Component {
   }
 
 
-  handleSubmit = (e) => {
+  commentCreate = (e) => {
     e.preventDefault();
+    e.target.reset();
     axios({
       url: `/api/items/${this.props.match.params.id}/comments`,
       method: 'POST',
@@ -45,17 +49,17 @@ class ItemsShow extends React.Component {
       .then(res => this.setState({ item: res.data }));
   }
 
-  handleChange = ({ target: { name, value }}) => {
+  handleCommentChange = (e) => {
+    const { name, value } = e.target;
     this.setState({ [name]: value });
   }
 
-  deleteComment = (id) => {
+  handleCommentDelete = (id) => {
     axios({
       url: `/api/items/${this.props.match.params.id}/comments/${id}`,
       method: 'DELETE'
     })
       .then(res => this.setState({ item: res.data }));
-
   }
 
 
@@ -84,48 +88,26 @@ class ItemsShow extends React.Component {
                 <p className="title is-4">{this.state.item.user.username}</p>
                 <div className="content-salePitch">
                   <h2 className="title"><strong>Sale Description:</strong> {this.state.item.salePitch}</h2>
-
                 </div>
               </div>
             </div>
           </div>
           <hr/>
-          {/* comments */}
-
-          {/* <section className="comment-form">
-            <form onSubmit={handleSubmit}>
-              <article className="media">
-                <figure className="media-left">
-                  <Link to={`/users/${comment.author._id}`}>
-                    <img src={comment.author.image} />
-                  </Link>
-                </figure> */}
-          <div className="media-content-comment">
-            <div className="content-comment">
-              <form onSubmit={this.handleSubmit}>
-                <div className="field-comment">
-                  <label className="label">Leave a comment for the seller</label>
-                  <textarea className="textarea" name="content" placeholder="Write a comment" onChange={this.handleChange}/>
-                </div>
-                <button className="button success">Send</button>
-              </form>
-            </div>
-            <div className="content">
-              {this.state.item.comments.map((comment) =>
-                <div key={comment._id}>
-                  {comment.author}
-                  {comment.content}
-                  <div className="media-right">
-                    <button onClick={() => this.deleteComment(comment._id)} className="delete"></button>
-                  </div>
-                </div>
-              )}
+          <div className="comment-content">
+            <div className="media-content">
+              <CommentForm
+                handleCommentChange={this.handleCommentChange}
+                commentCreate={this.commentCreate}
+                handleCommentDelete={this.handleCommentDelete}
+              />
+              <CommentBox
+                data={this.state}
+                handleCommentDelete={this.handleCommentDelete}
+              />
             </div>
           </div>
-          {/* </article>
-            </form>
-          </section> */}
         </div>
+        <hr/>
         {/* product detail */}
         <div className="column is-half-desktop is-half-tablet">
           <div className="content-itemdes">

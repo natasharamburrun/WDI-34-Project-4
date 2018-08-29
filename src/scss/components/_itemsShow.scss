@@ -54,6 +54,22 @@
   }
 }
 
-.media-content-comments form {
-  max-width: 660px;
+.field-comment .textarea {
+  min-width: 660px;
+}
+
+.content-comment {
+margin-top: 50px;
+}
+
+.userPicture{
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.media {
+  min-width: 660px;
+
 }

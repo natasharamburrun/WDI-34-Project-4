@@ -28,9 +28,6 @@ class Header extends React.Component {
         <div className="hero-head">
           <nav className="navbar" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
-              <Link to="/" className="navbar-item">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8sheOO-Hc2fYdmjp84I9f3vFtPf4zKni4d2Ed5QfE_litEH-3" height="50" />
-              </Link>
               <a role="button"
                 className={`navbar-burger${this.state.navbarOpen ? ' is-active' : ''}`}
                 aria-label="menu"
@@ -44,6 +41,7 @@ class Header extends React.Component {
             </div>
             <div className={`navbar-menu${this.state.navbarOpen ? ' is-active' : ''}`}>
               <div className="navbar-start">
+                <Link to="/" className="navbar-item">Home</Link>
                 <Link to="/about" className="navbar-item">About</Link>
                 {Auth.isAuthenticated() && <Link to="/items/new" className="navbar-item">Sell now</Link>}
               </div>
