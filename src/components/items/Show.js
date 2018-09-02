@@ -68,9 +68,9 @@ class ItemsShow extends React.Component {
     if(this.state.error) return <h2 className="title is-2">{this.state.error}</h2>;
     if(!this.state.item) return <h2 className="title is-2">Loading...</h2>;
     return (
-      <div className="columns">
+      <div className="columns is-multiline is-desktop is-tablet is-mobile">
         {/* Items picture */}
-        <div className="column is-half-desktop is-half-tablet">
+        <div className="column is-half">
           <figure className="image is-square">
             <img src={this.state.item.image} />
           </figure>
@@ -109,7 +109,7 @@ class ItemsShow extends React.Component {
         </div>
         <hr/>
         {/* product detail */}
-        <div className="column is-half-desktop is-half-tablet">
+        <div className="column is-half">
           <div className="content-itemdes">
             <h2 className="title">{this.state.item.designerName}</h2>
             <hr />
